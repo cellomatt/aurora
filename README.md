@@ -1,2 +1,2 @@
-# aurora-top-10
+# aurora
 A clone of Quora with an added "ranking" of questions by skill level.

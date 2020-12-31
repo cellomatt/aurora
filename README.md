@@ -174,9 +174,26 @@ More error code
 This bug certainly did not give us an easier time however 
 
 ## Developers
-<p><a href="https://github.com/vantanova" rel="nofollow"><img src="https://avatars1.githubusercontent.com/u/70561117?s=460&u=85a68af6fc136866eb4f33ee657aeb751aba9935&v=4" height="auto" width="100"></a>
-<a href="https://github.com/cellomatt" rel="nofollow"><img src="https://avatars3.githubusercontent.com/u/70362985?s=460&u=f842593461c24188b7472e98ec2813b87221bca2&v=4" height="auto" width="100"></a>
-<a href="https://github.com/QuintinHull" rel="nofollow"><img src="https://avatars2.githubusercontent.com/u/70037265?s=460&u=c4f09b24fc3acea13c4c81e5f0eef835bf54780b&v=4" height="auto" width="100"></a>
-<a href="https://github.com/lettemax" rel="nofollow"><img src="https://avatars0.githubusercontent.com/u/11065513?s=460&u=0c6a04b31933e0835366b26a34b62c33f3c427ca&v=4" height="auto" width="100"></a>
-</p>
+
+<table style="width:100%">
+  <tr>
+    <th><a href="https://github.com/vantanova" rel="nofollow"><img src="https://avatars1.githubusercontent.com/u/70561117?s=460&u=85a68af6fc136866eb4f33ee657aeb751aba9935&v=4" height="auto" width="100"></a></th>
+    <th><a href="https://github.com/cellomatt" rel="nofollow"><img src="https://avatars3.githubusercontent.com/u/70362985?s=460&u=f842593461c24188b7472e98ec2813b87221bca2&v=4" height="auto" width="100"></a></th>
+    <th><a href="https://github.com/QuintinHull" rel="nofollow"><img src="https://avatars2.githubusercontent.com/u/70037265?s=460&u=c4f09b24fc3acea13c4c81e5f0eef835bf54780b&v=4" height="auto" width="100"></a></th>
+    <th><a href="https://github.com/lettemax" rel="nofollow"><img src="https://avatars0.githubusercontent.com/u/11065513?s=460&u=0c6a04b31933e0835366b26a34b62c33f3c427ca&v=4" height="auto" width="100"></a></th>
+  </tr>
+  <tr>
+    <td>Antonio A.</td>
+    <td>Matt K.</td>
+    <td>Quintin H.</td>
+    <td>Max L.</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/vantanova">@vantanova</a></td>
+    <td><a href="https://github.com/cellomatt">@cellomatt</a></td>
+    <td><a href="https://github.com/QuintinHull">@QuintinHull</a></td>
+    <td><a href="https://github.com/lettemax">@lettemax</a></td>
+  </tr>
+</table>
+
 

@@ -24,7 +24,9 @@ intermediate and expert levels of difficulty.
 <h2>Try the site live: <a href="www.google.com">Here</a> <b>|</b> Check out our <a href="https://github.com/cellomatt/aurora/wiki">documentation</a></h2>
 
 ## How to run the site locally
-...
+> This is how to run the site locally 
+>
+>
 
 This piece of code is the basis of it all...
 ```

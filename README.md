@@ -98,10 +98,31 @@ The big thing in our code that we implemented
 
 1. We started by:
 
-    ```sh
+    ```
+    this can be our sample code
+    
+    
+    ```
+2. Then we did this:
+
+    ```    
     this can be our sample code
     ```
+    
+    
+3. Which led us to this:
 
+    ```
+    this can be our sample code
+    
+    
+    ```    
+4. And we finally figured out this...
+
+  ```
+  this can be our sample code
+
+  ```
 
 </details>
 
@@ -117,7 +138,26 @@ The big thing in our code that we implemented
     ```sh
     this can be our sample code
     ```
+2. Then we did this:
 
+    ```    
+    this can be our sample code
+    ```
+    
+    
+3. Which led us to this:
+
+    ```
+    this can be our sample code
+    
+    
+    ```    
+4. And we finally figured out this...
+
+  ```
+  this can be our sample code
+
+  ```
 
 </details>
 

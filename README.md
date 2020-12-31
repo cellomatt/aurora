@@ -49,11 +49,7 @@ This will be our second best code snippet
 <a href="https://expressjs.com/">
 <img src="https://img.shields.io/badge/Express-v4.17.1-blue">
 <a/>
-  
-<a href="https://www.npmjs.com/package/validator">
-<img src="https://img.shields.io/badge/Validator-v13.5.2-blue">
-<a/>
-  
+   
 <a href="https://pugjs.org/api/getting-started.html">
 <img src="https://img.shields.io/badge/Pug-v3-blue">
 <a/>
@@ -67,12 +63,30 @@ This will be our second best code snippet
 <a/>
 </p>
 
-
-
-Aurora is built with:
-
-Sequelize is used to store and easily manage data with its amazing 
+**Sequelize** was used to store and easily manage data with its amazing 
 data models and migrations.
+
+**Express JS** was our framework and it reduced a ton of boiler plate 
+code, freeing us to implement more features. 
+
+**NPM** was our software registry, and within it we installed many packages;
+some notable examples include:
+* nodemon,
+* morgan, 
+* validator,
+* *and more* 
+
+**Pug** is an excellent view engine we used to quickly, yet still
+beautifully display html on our pages.
+
+**Heroku** is the web hosting app of our choice that allowed us to 
+run our app on the cloud! 
+
+**Honarable Mentions** are the developement tools that made life 
+much more enjoyable! 
+* Postman, made route testing very easy and fun!
+* Postbird, its wonderful GUI made all the difference!
+
 
 ## Features that we implemented
 Our team implemented many features throughout our fullstack app, these

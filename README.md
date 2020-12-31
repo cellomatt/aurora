@@ -19,5 +19,19 @@ https://github.com/cellomatt/aurora/wiki
 
 
 ## Technologies used in Aurora
-<a href="https://www.npmjs.com/">
-  <img alt="npm" src="https://img.shields.io/npm/v/npm">
+Aurora is built with:
+
+Sequelize is used to store and easily manage data with its amazing 
+data models and migrations.
+
+<img src="https://img.shields.io/badge/Sequelize-v6.3.5-blue">
+
+<img src="https://img.shields.io/badge/Express-v4.17.1-blue">
+
+<img src="https://img.shields.io/badge/Validator-v13.5.2-blue">
+
+<img src="https://img.shields.io/badge/Pug-v3-blue">
+
+<img src="https://img.shields.io/badge/Node-v14.15.3-blue">
+
+<img src="https://img.shields.io/badge/Heroku-hosting-blue">

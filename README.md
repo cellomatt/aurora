@@ -11,6 +11,11 @@ intermediate and expert levels of difficulty.
 * Questions can be **sorted** either alphabetically, by recency or
   by popularity.
 
+<p align="center">
+<img src="https://lh3.googleusercontent.com/I527gBMsmemfRlHukIEdDbQjnkdxjfP8uPyRc9U0e0roZhVLcYy3IAefLvqth-QnnN79nh80MlJ2gsxZP3C4U2uV9A=w640-h400-e365-rj-sc0x00ffffff">
+</p>
+^^^ Where our website homepage screenshot will go 
+
 ## Link to live site
 
 
@@ -51,4 +56,51 @@ Aurora is built with:
 
 Sequelize is used to store and easily manage data with its amazing 
 data models and migrations.
+
+## Features that we implemented
+Our team implemented many features throughout our fullstack app, these
+are two in particular that ...
+```
+The big thing in our code that we implemented
+```
+<details><summary><b>How it was done</b></summary>
+
+1. We started by:
+
+    ```sh
+    this can be our sample code
+    ```
+
+
+</details>
+
+While this other feature...
+
+```
+The big thing in our code that we implemented
+```
+<details><summary><b>We got this by...</b></summary>
+
+1. We started by:
+
+    ```sh
+    this can be our sample code
+    ```
+
+
+</details>
+
+## Challenges throughout the developement process
+```
+Code that gave us trouble
+```
+Originally this issue gave us much trouble as young naive devs, 
+
+
+```
+More error code
+```
+This bug certainly did not give us an easier time however 
+
+
 

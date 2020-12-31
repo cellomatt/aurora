@@ -16,3 +16,8 @@ intermediate and expert levels of difficulty.
 
 ## Link to docs
 https://github.com/cellomatt/aurora/wiki
+
+
+## Technologies used in Aurora
+<a href="https://www.npmjs.com/">
+  <img alt="npm" src="https://img.shields.io/npm/v/npm">

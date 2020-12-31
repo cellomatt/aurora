@@ -22,6 +22,24 @@ intermediate and expert levels of difficulty.
 
 <h2>Try the site live: <a href="www.google.com">Here</a> <b>|</b> Check out our <a href="https://github.com/cellomatt/aurora/wiki">documentation</a></h2>
 
+This piece of code is the basis of it all...
+```
+This will be our first code snippet
+
+
+
+
+```
+
+Another one for fun...
+```
+This will be our second best code snippet
+
+
+
+
+```
+
 ## Technologies used in Aurora
 <p align="left">
 <a href="https://sequelize.org/">

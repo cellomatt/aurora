@@ -8,5 +8,5 @@ intermediate and expert levels of difficulty.
 * Ability to **post questions**, with both a topic and level of difficulty.
 * Posted questions can be **answered** and **commented on**.
 * The **search** bar can find questions using **regex**.  
-* Questions can **sorted** either alphabetically, by recency or
+* Questions can be **sorted** either alphabetically, by recency or
   by popularity.

@@ -2,6 +2,8 @@
 <img src="https://user-images.githubusercontent.com/70561117/103392693-04dc4a00-4ad4-11eb-9bbb-9d213c1607ad.png" width="600">
 </p>
 
+---
+
 **Aurora** is a clone of **[Quora](https://www.quora.com/)** with an added "ranking" of questions by skill level.
 The skill level ranking allows the questions to be easily accessed by beginning, 
 intermediate and expert levels of difficulty. 
@@ -18,12 +20,7 @@ intermediate and expert levels of difficulty.
 </p>
 ^^^ Where our website homepage screenshot will go 
 
-## Link to live site
-
-
-## Link to docs
-https://github.com/cellomatt/aurora/wiki
-
+<h2>Try the site live: <a href="www.google.com">Here</a> <b>|</b> Check out our <a href="https://github.com/cellomatt/aurora/wiki">documentation</a></h2>
 
 ## Technologies used in Aurora
 <p align="left">

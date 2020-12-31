@@ -197,5 +197,5 @@ This bug certainly did not give us an easier time however
   </tr>
 </table>
 
-*Thank you for reading our project README ❤️*
+<p align="center"> <i>Thank you for reading our project README ❤️</i> </p>
 

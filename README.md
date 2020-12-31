@@ -175,6 +175,7 @@ This bug certainly did not give us an easier time however
 
 ## Developers
 
+
 <table style="width:100%">
   <tr>
     <th><a href="https://github.com/vantanova" rel="nofollow"><img src="https://avatars1.githubusercontent.com/u/70561117?s=460&u=85a68af6fc136866eb4f33ee657aeb751aba9935&v=4" height="auto" width="100"></a></th>
@@ -196,4 +197,5 @@ This bug certainly did not give us an easier time however
   </tr>
 </table>
 
+*Thank you for reading our project README ❤️*
 

@@ -20,10 +20,13 @@ https://github.com/cellomatt/aurora/wiki
 
 ## Technologies used in Aurora
 <p align="left">
- 
+<a href="https://www.w3schools.com">
 <img src="https://img.shields.io/badge/Sequelize-v6.3.5-blue">
+<a/>
 
+<a href="https://www.w3schools.com">
 <img src="https://img.shields.io/badge/Express-v4.17.1-blue">
+<a/>
 
 <img src="https://img.shields.io/badge/Validator-v13.5.2-blue">
 

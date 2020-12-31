@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/70561117/103392693-04dc4a00-4ad4-11eb-9bbb-9d213c1607ad.png" width="600">
 </p>
 
-**Aurora** is a clone of Quora with an added "ranking" of questions by skill level.
+**Aurora** is a clone of **[Quora](https://www.quora.com/)** with an added "ranking" of questions by skill level.
 The skill level ranking allows the questions to be easily accessed by beginning, 
 intermediate and expert levels of difficulty. 
 

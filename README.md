@@ -20,21 +20,29 @@ https://github.com/cellomatt/aurora/wiki
 
 ## Technologies used in Aurora
 <p align="left">
-<a href="https://www.w3schools.com">
+<a href="https://sequelize.org/">
 <img src="https://img.shields.io/badge/Sequelize-v6.3.5-blue">
 <a/>
 
-<a href="https://www.w3schools.com">
+<a href="https://expressjs.com/">
 <img src="https://img.shields.io/badge/Express-v4.17.1-blue">
 <a/>
-
+  
+<a href="https://www.npmjs.com/package/validator">
 <img src="https://img.shields.io/badge/Validator-v13.5.2-blue">
-
+<a/>
+  
+<a href="https://pugjs.org/api/getting-started.html">
 <img src="https://img.shields.io/badge/Pug-v3-blue">
-
+<a/>
+  
+<a href="https://nodejs.org/en/">  
 <img src="https://img.shields.io/badge/Node-v14.15.3-blue">
+<a/>
 
+<a href="https://www.heroku.com/">
 <img src="https://img.shields.io/badge/Heroku-hosting-blue">
+<a/>
 </p>
 
 

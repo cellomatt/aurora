@@ -5,12 +5,16 @@ block content
     form(action="/signup" method="post")
       label(for="username") Username:
       input(type="text" name="username" required)
+      div
       label(for="email") Email:
       input(type="email" name="email" required)
+      div
       label(for="password") Password (Include at least one number, one capital letter, and one special character (!@#$%^&*)):
       input(type="password" name="password" required)
+      div
       label(for="confirmPassword") Confirm Password:
       input(type="password" name="confirmPassword" required)
+      div
       button(type="submit") Sign Up
       input(type="hidden" name="_csrf" value=csrfToken)
 

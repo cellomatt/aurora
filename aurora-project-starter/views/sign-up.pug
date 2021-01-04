@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  div
+    form(action="/users" method="post")
+      label(for="username") Username:
+      input(type="text" name="username" required)
+      label(for="email") Email:
+      input(type="email" name="email" required)
+      label(for="password") Password (Include at least one number, one capital letter, and one special character (!@#$%^&*)):
+      input(type="password" name="password" required)
+      label(for="confirmPassword") Confirm Password:
+      input(type="password" name="confirmPassword" required)
+      button(type="submit") Sign Up
+      input(type="hidden" name="_csrf" value=csrfToken)
+
+  div
+    a(href='/login') Already have an account? Sign in here.

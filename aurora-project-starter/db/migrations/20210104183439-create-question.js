@@ -9,18 +9,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(100)
       },
       message: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(300)
       },
       expertiseId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       topicId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       userId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

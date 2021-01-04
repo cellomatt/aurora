@@ -4,8 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     level: DataTypes.INTEGER,
     description: DataTypes.STRING
   }, {});
-  Expertise.associate = function(models) {
-    // associations can be defined here
+  Expertise.associate = function (models) {
+    Expertise.hasMany(models.Question, {
+      foreignKey: 'expertiseId'
+    })
   };
   return Expertise;
 };

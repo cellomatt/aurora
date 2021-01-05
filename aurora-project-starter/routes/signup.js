@@ -11,17 +11,10 @@ const {
   handleValidationErrors
 } = require("../utils/utils");
 
-const csrfProtection = csrf({
-  cookie: true
-});
-router.use(express.urlencoded({
-  extended: false
-}));
+const csrfProtection = csrf({cookie: true});
+router.use(express.urlencoded({extended: false}));
 router.use(express.json());
-const {
-  check,
-  validationResult
-} = require('express-validator');
+const { check, validationResult } = require('express-validator');
 
 const formValidators = [
   check("username")
@@ -60,7 +53,8 @@ const formValidators = [
 /* GET sign-up form. */
 router.get("/", csrfProtection, function (req, res, next) {
   res.render("signup", {
-    csrfToken: req.csrfToken()
+    title: "Sign Up",
+    csrfToken: req.csrfToken(),
   });
 });
 

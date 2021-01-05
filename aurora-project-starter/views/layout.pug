@@ -3,7 +3,14 @@ html
   head
       block head
         //- title needs to be passed in on route handlers
-        title Aurora - #{title} 
+        title Aurora - #{title}
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/index.css')
   body
-    block content
+    //- nav bar (including home button)
+    div.nav_bar
+      img(src="/images/logo.svg" width="150px")
+			      
+     
+  //- logo image
+  block content

@@ -1,22 +1,25 @@
 extends layout.pug
 
+
 block content
-  div.parent
+  //- div.parent
   div.form.child
+    h1.form__title Sign Up
     form(action="/signup" method="post")
       label(for="username") Username:
-      input(type="text" name="username" class="inputField" placeholder="Your username.." required)
+      input(type="text" name="username" class="form__input_field" placeholder="Your username.." required)
       div
       label(for="email") Email:
-      input(type="email" name="email" class="inputField"  placeholder="Your email.." required)
+      input(type="email" name="email" class="form__input_field"  placeholder="Your email.." required)
       div
-      label(for="password") Password (Include at least one number, one capital letter, and one special character (!@#$%^&*)):
-      input(type="password" name="password" class="inputField" placeholder="Your super secret password!" required)
+      label(for="password") Password:
+      p.form__sub_label Please include at least one capital letter, one lowercase letter, one number, and one special character (!@#$%^&*).
+      input(type="password" name="password" class="form__input_field" placeholder="Your super secret password!" required)
       div
       label(for="confirmPassword") Confirm Password:
-      input(type="password" name="confirmPassword" class="inputField" placeholder="One more time.." required)
+      input(type="password" name="confirmPassword" class="form__input_field" placeholder="One more time.." required)
       div
-      button(type="submit" class="submitButton") Sign Up
-      div.smallHyperlinks
-        a(href='/login' class="smallHyperlinks") Already have an account? Sign in here.
+      button(type="submit" class="form__submit_button") Sign Up
+      div.small_hyperlink
+        a(href='/login') Already have an account? Sign in here.
       input(type="hidden" name="_csrf" value=csrfToken)

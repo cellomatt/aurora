@@ -36,6 +36,7 @@ const store = new SequelizeStore({
 
 app.use(
   session({
+    name: "aurora.sid",
     secret: sessionSecret,
     store,
     saveUninitialized: false,
@@ -44,7 +45,7 @@ app.use(
       httpOnly: true,
       maxAge: 1800000,
       path: "/",
-      secure: true,
+      // secure: true,
     },
   })
 );
@@ -56,9 +57,10 @@ app.use(restoreUser);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/logout", logoutRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signUpRouter);
-app.use("/", logoutRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

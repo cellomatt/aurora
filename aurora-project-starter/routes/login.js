@@ -2,9 +2,17 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-const { check, validationResult } = require("express-validator");
-const { loginUser } = require("../utils/auth");
-const { csrfProtection, asyncHandler } = require("../utils/utils");
+const {
+  check,
+  validationResult
+} = require("express-validator");
+const {
+  loginUser
+} = require("../utils/auth");
+const {
+  csrfProtection,
+  asyncHandler
+} = require("../utils/utils");
 const db = require("../db/models");
 
 /* GET login form. */
@@ -17,11 +25,15 @@ router.get("/", csrfProtection, (req, res) => {
 
 const loginValidators = [
   check("username")
-    .exists({ checkFalsy: true })
-    .withMessage("Please provide a value for Username"),
+  .exists({
+    checkFalsy: true
+  })
+  .withMessage("Please provide a value for Username"),
   check("password")
-    .exists({ checkFalsy: true })
-    .withMessage("Please provide a value for Password"),
+  .exists({
+    checkFalsy: true
+  })
+  .withMessage("Please provide a value for Password"),
 ];
 
 router.post(
@@ -29,13 +41,20 @@ router.post(
   csrfProtection,
   loginValidators,
   asyncHandler(async (req, res) => {
-    const { username, password } = req.body;
+    const {
+      username,
+      password
+    } = req.body;
 
     let errors = [];
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
-      const user = await db.User.findOne({ where: { username } });
+      const user = await db.User.findOne({
+        where: {
+          username
+        }
+      });
 
       if (user !== null) {
         const passwordMatch = await bcrypt.compare(
@@ -45,7 +64,13 @@ router.post(
 
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect("/");
+          return req.session.save(err => {
+            if (err) {
+              next(err);
+            } else {
+              return res.redirect('/');
+            }
+          });
         }
       }
 

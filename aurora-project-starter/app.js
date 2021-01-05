@@ -15,7 +15,7 @@ const signUpRouter = require("./routes/signup");
 const logoutRouter = require("./routes/logout");
 const questionsRouter = require("./routes/questions")
 const homeRouter = require("./routes/home");
-const topicsRouter = require("./routes/topic");
+const topicsRouter = require("./routes/topics");
 
 const app = express();
 

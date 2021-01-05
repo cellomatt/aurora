@@ -14,7 +14,7 @@ const loginRouter = require("./routes/login");
 const signUpRouter = require("./routes/signup");
 const logoutRouter = require("./routes/logout");
 const homeRouter = require("./routes/home");
-const topicsRouter = require("./routes/topic");
+const topicsRouter = require("./routes/topics");
 const app = express();
 
 // view engine setup

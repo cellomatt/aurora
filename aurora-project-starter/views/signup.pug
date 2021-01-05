@@ -1,22 +1,22 @@
 extends layout.pug
 
 block content
-  div
+  div.parent
+  div.form.child
     form(action="/signup" method="post")
       label(for="username") Username:
-      input(type="text" name="username" required)
+      input(type="text" name="username" class="inputField" placeholder="Your username.." required)
       div
       label(for="email") Email:
-      input(type="email" name="email" required)
+      input(type="email" name="email" class="inputField"  placeholder="Your email.." required)
       div
       label(for="password") Password (Include at least one number, one capital letter, and one special character (!@#$%^&*)):
-      input(type="password" name="password" required)
+      input(type="password" name="password" class="inputField" placeholder="Your super secret password!" required)
       div
       label(for="confirmPassword") Confirm Password:
-      input(type="password" name="confirmPassword" required)
+      input(type="password" name="confirmPassword" class="inputField" placeholder="One more time.." required)
       div
-      button(type="submit") Sign Up
+      button(type="submit" class="submitButton") Sign Up
+      div.smallHyperlinks
+        a(href='/login' class="smallHyperlinks") Already have an account? Sign in here.
       input(type="hidden" name="_csrf" value=csrfToken)
-
-  div
-    a(href='/login') Already have an account? Sign in here.

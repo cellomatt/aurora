@@ -11,8 +11,16 @@ const {
   handleValidationErrors
 } = require("../utils/utils");
 
-const csrfProtection = csrf({cookie: true});
-router.use(express.urlencoded({extended: false}));
+
+const { loginUser } = require("../utils/auth");
+
+const csrfProtection = csrf({
+  cookie: true
+});
+router.use(express.urlencoded({
+  extended: false
+}));
+
 router.use(express.json());
 const { check, validationResult } = require('express-validator');
 
@@ -80,7 +88,15 @@ router.post(
         hashedPassword,
       });
 
-      res.redirect("/");
+      loginUser(req, res, user);
+
+      return req.session.save(err => {
+        if (err) {
+          next(err);
+        } else {
+          return res.redirect("/");
+        }
+      })
     } else {
       const errors = validationErrors.array().map((err) => err.msg);
       console.log(errors);

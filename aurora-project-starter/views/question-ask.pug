@@ -1,1 +1,20 @@
 extends layout.pug
+
+block content
+  form(action="/question" method="post")
+    input(type="hidden" name="_csrf" value=csrfToken)
+    label(for="title") Your Question:
+    input(type="text" name="title" required)
+    label(for="topicId") Topic:
+    select(name="topicId")
+      each topic in topics
+        option(value= topic.id)= topic.name
+    label(for="expertiseId") Expertise Level:
+    select(name="expertiseId")
+      each expertise in expertises
+        option(value= expertise.id)= expertise.description
+    div
+    label(for="message") Additional information:
+    textarea(name="message" required)
+    div
+    button(type="submit") Submit

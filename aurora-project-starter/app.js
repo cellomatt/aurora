@@ -13,7 +13,8 @@ const usersRouter = require("./routes/users");
 const loginRouter = require("./routes/login");
 const signUpRouter = require("./routes/signup");
 const logoutRouter = require("./routes/logout");
-
+const homeRouter = require("./routes/home");
+const topicsRouter = require("./routes/topic");
 const app = express();
 
 // view engine setup
@@ -60,7 +61,8 @@ app.use("/users", usersRouter);
 app.use("/logout", logoutRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signUpRouter);
-
+app.use("/home", homeRouter);
+app.use("/topics", topicsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

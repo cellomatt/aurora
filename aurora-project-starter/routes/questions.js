@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const csrf = require("csurf");
 const db = require("../db/models");
-const { User, Question, Expertise, Topic } = db;
+const { User, Question, Expertise, Topic, Answer } = db;
 const { asyncHandler, handleValidationErrors } = require("../utils/utils");
 const { requireAuth } = require("../utils/auth");
 const csrfProtection = csrf({ cookie: true });
@@ -88,6 +88,17 @@ router.post(
         }
     })
 );
+
+router.get('/:id', asyncHandler((async (req, res) => {
+    const question = await Question.findByPk(req.params.id, {
+        includes: { User, Topic, Expertise, Answer }
+    })
+
+    res.render('question-view', {
+        question,
+        title: `Question: ${question.id}`
+    })
+})))
 
 
 

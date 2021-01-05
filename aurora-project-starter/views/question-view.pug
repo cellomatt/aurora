@@ -1,0 +1,9 @@
+extends layout.pug
+block content
+  h1= question.title
+  h2= question.message
+  //- h3= question.User.username
+  form(action="/answers" method="post")
+    label(for="answer")
+    input(name="answer" placeholder="Answer question here")
+    button(type="submit") Submit

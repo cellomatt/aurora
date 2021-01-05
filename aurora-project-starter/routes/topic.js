@@ -8,18 +8,21 @@ router.get(
   "/",
   asyncHandler(async (req, res, next) => {
     const topics = await Topic.findAll();
-    res.render("topic", {
-      title: "Topic",
+    res.render("topics", {
+      title: "Topics",
       topics,
     });
   })
 );
 
 router.get(
-  "/:name",
+  "/:id",
   asyncHandler(async (req, res, next) => {
-    const topic = await Topic.findOne({ where: { name: req.params.name } });
-    console.log(topic);
+    const topic = await Topic.findOne({ where: { id: req.params.id } });
+    console.log(topic.name);
+    // redir/render
   })
 );
+
+
 module.exports = router;

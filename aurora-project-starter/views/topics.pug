@@ -2,4 +2,4 @@ extends layout.pug
 
 block content
     each topic in topics
-        h2= topic.name
+        a(href=`/topics/${topic.id}`)= topic.name

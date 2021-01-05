@@ -3,4 +3,5 @@ extends layout.pug
 block content
     each question in questions
         h2= question.User.username
+        h3= question.title
         h3= question.message

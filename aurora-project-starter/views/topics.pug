@@ -1,0 +1,5 @@
+extends layout.pug
+
+block content
+    each topic in topics
+        a(href=`/topics/${topic.id}`)= topic.name

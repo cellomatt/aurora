@@ -1,11 +1,12 @@
 extends layout.pug
 
-
+append head
+  script(src="/javascripts/signup.js" type="module" defer)
 block content
   //- div.parent
   div.form.child
     h1.form__title Sign Up
-    form(action="/signup" method="post")
+    form#signUp(action="/signup" method="post")
       label(for="username") Username:
       input(type="text" name="username" class="form__input_field" placeholder="Your username.." required)
       div
@@ -14,10 +15,10 @@ block content
       div
       label(for="password") Password:
       p.form__sub_label Please include at least one capital letter, one lowercase letter, one number, and one special character (!@#$%^&*).
-      input(type="password" name="password" class="form__input_field" placeholder="Your super secret password!" required)
+      input(type="password" name="password" id="password" class="form__input_field" placeholder="Your super secret password!" required)
       div
       label(for="confirmPassword") Confirm Password:
-      input(type="password" name="confirmPassword" class="form__input_field" placeholder="One more time.." required)
+      input(type="password" name="confirmPassword" id="confirmPassword" class="form__input_field" placeholder="One more time.." required)
       div
       button(type="submit" class="form__submit_button") Sign Up
       div.small_hyperlink

@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    each question in questions
+        div
+            p= question.title
+            a(href=`/questions/${question.id}`)

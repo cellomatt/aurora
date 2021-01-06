@@ -7,10 +7,16 @@ html
         link(rel='stylesheet' href='/stylesheets/reset.css')
         link(rel='stylesheet' href='/stylesheets/index.css')
   body
-    //- nav bar (including home button)
-    div.nav_bar
-      img(src="/images/logo.svg" width="150px")
-			      
-     
-  //- logo image
+
+    div.topnav
+      a(href="/")
+        img.logo(src="/images/logo.svg" width="150px")
+      div.flex-containter
+        a(href="/home") 🏠 Home
+        a(href="/topics") 📄 Topics
+      button.nav__search_button 🔍
+      input.search_bar(type="text" placeholder="Search")
+      form(method="get" action="/login")
+        button.nav__submit_button(type="submit") Login
+
   block content

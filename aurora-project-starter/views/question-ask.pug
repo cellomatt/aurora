@@ -1,20 +1,28 @@
 extends layout.pug
 
+append head
+    link(rel='stylesheet' href='/stylesheets/question.css')
+
 block content
-  form(action="/questions" method="post")
-    input(type="hidden" name="_csrf" value=csrfToken)
-    label(for="title") Your Question:
-    input(type="text" name="title" required)
-    label(for="topicId") Topic:
-    select(name="topicId" required)
-      each topic in topics
-        option(value= topic.id)= topic.name
-    label(for="expertiseId") Expertise Level:
-    select(name="expertiseId" required)
-      each expertise in expertises
-        option(value= expertise.id)= expertise.description
-    div
-    label(for="message") Additional information:
-    textarea(name="message" required)
-    div
-    button(type="submit") Submit
+    form(action="/questions" method="post" class="form child")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        label(for="title") Your Question:
+        div
+        input(type="text" name="title" class="form__input_field" required)
+
+        select(name="topicId" class="form__dropdown" required)
+            option(value="" disabled selected hidden) Topic
+            each topic in topics
+                option(value=topic.id class="form__dropdown--option")=topic.name
+
+        select(name="expertiseId" class="form__dropdown" required)
+            option(value="" disabled selected hidden) Expertise Level
+            each expertise in expertises
+                option(value=expertise.id class="form__dropdown--option")=expertise.description
+        div
+
+        label(for="message") Additional Information:
+        div
+        textarea(name="message" class="form__input_field textarea" required)
+        div
+        button(type="submit" class="form__submit_button") Submit

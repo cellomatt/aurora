@@ -18,11 +18,16 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async (req, res, next) => {
-    const topic = await Topic.findByPk(req.params.id)
-    const questions = await Question.findAll({ where: { topicId: req.params.id}});
-    res.render('topic-view', { questions, title: `Topic: ${topic.name}`});
+    const topic = await Topic.findByPk(req.params.id);
+    const questions = await Question.findAll({
+      where: { topicId: req.params.id },
+    });
+    res.render("topic-view", {
+      questions,
+      topic,
+      title: `Topic: ${topic.name}`,
+    });
   })
 );
-
 
 module.exports = router;

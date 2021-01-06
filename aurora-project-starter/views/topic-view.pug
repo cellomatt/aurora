@@ -1,7 +1,10 @@
 extends layout.pug
 
 block content
+    h1=topic.name
     each question in questions
         div
-            p= question.title
             a(href=`/questions/${question.id}`)
+                span
+                    p=question.title
+                

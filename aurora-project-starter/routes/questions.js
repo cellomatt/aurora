@@ -12,21 +12,21 @@ router.use(express.urlencoded({ extended: false }));
 const formValidators = [
     check("title")
     .exists({
-      checkFalsy: true
+        checkFalsy: true
     })
     .withMessage("Please enter a question.")
     .isLength({
-      max: 100
+        max: 100
     })
     .withMessage("Your question must be 100 characters or less."),
     check("topicId")
     .exists({
-      checkFalsy: true
+        checkFalsy: true
     })
     .withMessage("Please choose a topic for your question."),
     check("expertiseId")
     .exists({
-      checkFalsy: true
+        checkFalsy: true
     })
     .withMessage("Please choose a level of expertise for your question."),
     check("message")
@@ -36,9 +36,9 @@ const formValidators = [
     .withMessage("Please enter some context for your question.")
     .isLength({
         max: 300
-      })
-      .withMessage("Additional information must be 300 characters or less."),
-  ];
+    })
+    .withMessage("Additional information must be 300 characters or less."),
+];
 
 
 router.get(
@@ -46,16 +46,16 @@ router.get(
     requireAuth,
     csrfProtection,
     asyncHandler(async (req, res) => {
-    const topics = await Topic.findAll();
-    const expertises = await Expertise.findAll();
+        const topics = await Topic.findAll();
+        const expertises = await Expertise.findAll();
 
-    res.render('question-ask', {
-        title: 'Ask a Question',
-        topics,
-        expertises,
-        csrfToken: req.csrfToken(),
-    })
-}));
+        res.render('question-ask', {
+            title: 'Ask a Question',
+            topics,
+            expertises,
+            csrfToken: req.csrfToken(),
+        })
+    }));
 
 router.post(
     '/',
@@ -66,10 +66,8 @@ router.post(
         const validationErrors = validationResult(req);
 
         if (validationErrors.isEmpty()) {
-
             const { title, topicId, expertiseId, message } = req.body;
             const { userId } = req.session.auth
-            const topic = await Topic.findByPk(topicId)
 
             const question = await Question.create({
                 title,
@@ -79,9 +77,7 @@ router.post(
                 userId
             });
 
-            res.redirect(`/topics/${topicId}`, {
-                title: `${topic.name}`
-            })
+            res.redirect(`/topics/${topicId}`)
         } else {
             const errors = validationErrors.array().map((err) => err.msg);
             console.log(errors);
@@ -94,7 +90,7 @@ router.get('/:id', asyncHandler((async (req, res) => {
         includes: { User, Topic, Expertise }
     })
 
-    const answers = await Answer.findAll({ where: {questionId: req.params.id }});
+    const answers = await Answer.findAll({ where: { questionId: req.params.id } });
 
     res.render('question-view', {
         question,

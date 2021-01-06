@@ -1,4 +1,7 @@
 extends layout.pug
+
+include utils.pug
+
 block nav
   div.topnav_user_auth
       a(href="/")
@@ -7,6 +10,7 @@ block content
   div.parent
     div.form.child
       h1.form__title Log In
+      +validationErrorSummary(errors)
       form(action='/login' method='post')
         label(for='username') Username:
         input(type="text" name="username" class="form__input_field" required)

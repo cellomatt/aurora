@@ -62,3 +62,12 @@ h1 {
     overflow: hidden;
     display: flex;
 }
+
+.errors-alert {
+    border: none;
+    border-radius: 4px;
+    background-color: lightcoral;
+    box-sizing: border-box;
+    padding: 5px 20px 15px 25px;
+    margin: 10px 10px 20px;
+}

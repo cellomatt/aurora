@@ -33,7 +33,7 @@ const formValidators = [
   .isLength({
     max: 15
   })
-  .withMessage("Must be 15 characters or less"),
+  .withMessage("Username must be 15 characters or less"),
   check("email")
   .exists({
     checkFalsy: true
@@ -53,9 +53,18 @@ const formValidators = [
   .isLength({
     min: 7
   })
-  .withMessage("Must have at least 7 characters")
+  .withMessage("Password must have at least 7 characters")
   .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/)
-  .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")')
+  .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
+  check("confirmPassword")
+  .exists({ checkFalsy: true })
+  .withMessage("Please provide a value for confirmed password")
+  .custom((value, { req }) => { 
+    if(value !== req.body.password) {
+      throw new Error("Confirmed password does not match password.");
+    }
+    return true;
+  })
 ];
 
 /* GET sign-up form. */
@@ -99,7 +108,11 @@ router.post(
       })
     } else {
       const errors = validationErrors.array().map((err) => err.msg);
-      console.log(errors);
+      res.render('signup', {
+        title: "Sign Up",
+        errors,
+        csrfToken: req.csrfToken(),
+      })
     }
   })
 );

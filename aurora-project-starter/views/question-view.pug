@@ -12,4 +12,4 @@ block content
     button(type="submit") Submit
   div
     each answer in answers
-        p= answer.message 
+        a(href=`/answers/${answer.id}`)= answer.message

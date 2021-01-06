@@ -7,11 +7,6 @@ html
         link(rel='stylesheet' href='/stylesheets/reset.css')
         link(rel='stylesheet' href='/stylesheets/index.css')
   body
-    //- nav bar (including home button)
-    //- div.nav_bar
-    //-   a(href="/")
-    //-     img(src="/images/logo.svg" width="150px")
-
 
     div.topnav
       a(href="/")
@@ -19,15 +14,9 @@ html
       div.flex-containter
         a(href="/home") 🏠 Home
         a(href="/topics") 📄 Topics
-        a(href="/answers") 📩 Answers
-      input.search_bar(type="text" placeholder="What's your question?")
-      select(name="topicId" class="topnav__dropdown" required)
-          option Topic
-      select(name="topicId" class="topnav__dropdown" required) Expertise
-          option Expertise
-      button.nav__submit_button Ask a Question!
+      button.nav__search_button 🔍
+      input.search_bar(type="text" placeholder="Search")
+      form(method="get" action="/login")
+        button.nav__submit_button(type="submit") Login
 
-
-
-  //- logo image
   block content

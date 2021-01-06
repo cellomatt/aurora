@@ -9,17 +9,17 @@ block content
     +validationErrorSummary(errors)
     form#signUp(action="/signup" method="post")
       label(for="username") Username:
-      input(type="text" name="username" class="form__input_field" placeholder="Your username.." required)
+      input(type="text" name="username" class="form__input_field" placeholder="exampleuser981" required)
       div
       label(for="email") Email:
-      input(type="email" name="email" class="form__input_field"  placeholder="Your email.." required)
+      input(type="email" name="email" class="form__input_field"  placeholder="youremail@email.com" required)
       div
       label(for="password") Password:
-      p.form__sub_label Please include at least one capital letter, one lowercase letter, one number, and one special character (!@#$%^&*).
+      p.form__sub_label Please enter a password of at least 7 characters, including at least one capital letter, one lowercase letter, one number, and one special character (!@#$%^&*).
       input(type="password" name="password" id="password" class="form__input_field" placeholder="Your super secret password!" required)
       div
       label(for="confirmPassword") Confirm Password:
-      input(type="password" name="confirmPassword" id="confirmPassword" class="form__input_field" placeholder="One more time.." required)
+      input(type="password" name="confirmPassword" id="confirmPassword" class="form__input_field" placeholder="One more time..." required)
       div
       button(type="submit" class="form__submit_button") Sign Up
       div.small_hyperlink

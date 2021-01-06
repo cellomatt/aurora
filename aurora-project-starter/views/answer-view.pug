@@ -1,9 +1,10 @@
 extends layout.pug
 
 block content 
-  h1= answer.message
+  h1= question.title
+  h2= answer.message
   each comment in comments
-    h2= comment.message
+    h3= comment.message
   form(action='/comments' method='post')
     input(name="_csrf" type="hidden" value=csrfToken)
     input(name="answerId" type="hidden" value=answer.id)

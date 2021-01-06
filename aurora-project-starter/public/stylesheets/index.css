@@ -81,16 +81,22 @@ h1 {
     background-color: #333;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .topnav a {
-    float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
 
+}
+
+.flex-containter {
+    display: flex;
+    justify-content: flex-start;
+    width: 1000px;
 }
 
 .topnav a:hover {
@@ -111,12 +117,29 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    float: right;
+    margin-right: 10px;
 }
 
 .search_bar {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
+    padding: 7px;
+    font-size: 14px;
     border: none;
+    align-self: center;
+    margin: 20px;
+    flex: 1;
+    max-width: 500px;
+}
+
+
+.topnav__dropdown {
+    box-sizing: border-box;
+    margin-right: 10px;
+    background-color: #c12f2f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+
 }

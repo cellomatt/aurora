@@ -45,14 +45,14 @@ h1 {
 }
 
 .parent {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-self: center;
+    padding-top: 200px;
 }
 
 .nav_bar {

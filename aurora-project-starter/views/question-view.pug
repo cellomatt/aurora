@@ -4,6 +4,9 @@ block content
   h2= question.message
   //- h3= question.User.username
   form(action="/answers" method="post")
-    label(for="answer")
-    input(name="answer" placeholder="Answer question here")
+    input(name="userId" type="hidden" value=question.userId)
+    input(name="questionId" type="hidden" value=question.id)
+    input(name="_csrf" type="hidden" value=csrfToken)
+    label(for="message")
+    input(name="message" type="text" placeholder="Answer question here")
     button(type="submit") Submit

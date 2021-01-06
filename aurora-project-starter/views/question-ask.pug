@@ -6,9 +6,9 @@ append head
 
 block content
     div.parent
-        +validationErrorSummary(errors)
         form(action="/questions" method="post" class="form child")
             h1.form__title Add a Question
+            +validationErrorSummary(errors)
             input(type="hidden" name="_csrf" value=csrfToken)
             label(for="title") Your Question:
             input(type="text" name="title" class="form__input_field" required)

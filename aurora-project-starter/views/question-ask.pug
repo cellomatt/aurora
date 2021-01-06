@@ -1,9 +1,11 @@
 extends layout.pug
+include utils.pug
 
 append head
     link(rel='stylesheet' href='/stylesheets/question.css')
 
 block content
+    +validationErrorSummary(errors)
     form(action="/questions" method="post" class="form child")
         input(type="hidden" name="_csrf" value=csrfToken)
         label(for="title") Your Question:

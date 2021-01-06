@@ -1,8 +1,8 @@
 extends layout.pug
+include utils.pug
 
-append head
-  script(src="/javascripts/signup.js" type="module" defer)
 block content
+  +validationErrorSummary(errors)
   //- div.parent
   div.form.child
     h1.form__title Sign Up

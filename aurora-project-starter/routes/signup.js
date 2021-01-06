@@ -55,7 +55,10 @@ const formValidators = [
   })
   .withMessage("Must have at least 7 characters")
   .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/)
-  .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")')
+  .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
+  check("confirmPassword")
+  .equals("password")
+  .withMessage("Passwords must match!")
 ];
 
 /* GET sign-up form. */
@@ -99,7 +102,11 @@ router.post(
       })
     } else {
       const errors = validationErrors.array().map((err) => err.msg);
-      console.log(errors);
+      res.render('signup', {
+        title: "Sign Up",
+        errors,
+        csrfToken: req.csrfToken(),
+      })
     }
   })
 );

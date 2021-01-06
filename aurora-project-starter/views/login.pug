@@ -1,7 +1,8 @@
 extends layout.pug
+include utils.pug
 
 block content
-
+  +validationErrorSummary(errors)
   div.form.child
     h1.form__title Log In
     form(action='/login' method='post')

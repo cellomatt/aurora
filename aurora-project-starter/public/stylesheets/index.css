@@ -90,6 +90,28 @@ h1 {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+}
+
+.topnav a:hover {
+    color: black;
+    border-radius: 4px;
+}
+
+.topnav__button:hover {
+    background-color: #ddd;
+}
+
+.topnav_user_auth {
+
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 
 }
 
@@ -99,15 +121,11 @@ h1 {
     width: 1000px;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-    border-radius: 4px;
-}
-
 .logo {
     align-self: flex-start;
 }
+
+
 
 .nav__submit_button {
     background-color: #c12f2f;

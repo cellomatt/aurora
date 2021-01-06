@@ -33,13 +33,16 @@ router.post(
 // possibly need route to pull single answer
 router.get(
   "/:id",
+  csrfProtection,
   asyncHandler(async (req, res, next) => {
     const answer = await Answer.findByPk(req.params.id, {
       includes: { User, Question, Topic, Expertise, Comment },
     });
-    console.log(answer);
+    const comments = await Comment.findAll({ where: { answerId: req.params.id }});
     return res.render("answer-view", {
       answer,
+      comments,
+      csrfToken: req.csrfToken()
     });
   })
 );

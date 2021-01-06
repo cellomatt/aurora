@@ -38,11 +38,15 @@ router.get(
     const answer = await Answer.findByPk(req.params.id, {
       includes: { User, Question, Topic, Expertise, Comment },
     });
-    const comments = await Comment.findAll({ where: { answerId: req.params.id }});
+    const question = await Question.findByPk(answer.questionId);
+    const comments = await Comment.findAll({
+      where: { answerId: req.params.id },
+    });
     return res.render("answer-view", {
       answer,
       comments,
-      csrfToken: req.csrfToken()
+      question,
+      csrfToken: req.csrfToken(),
     });
   })
 );

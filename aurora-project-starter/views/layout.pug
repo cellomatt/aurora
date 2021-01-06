@@ -13,10 +13,11 @@ html
       a(href="/")
         img.logo(src="/images/logo.svg" width="150px")
       div.flex-containter
-        a.topnav__button(href="/home") 🏠 Home
+        a.topnav__button(href="/") 🏠 Home
         a.topnav__button(href="/topics") 📄 Topics
         if locals.authenticated
           a.topnav__button(href="/questions/new") 📝 Add a Question
+
       button.nav__search_button 🔍
       input.search_bar(type="text" placeholder="Search")
 

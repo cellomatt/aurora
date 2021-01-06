@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content 
+  h1= question.title
+  h2= answer.message
+  each comment in comments
+    h3= comment.message
+  form(action='/comments' method='post')
+    input(name="_csrf" type="hidden" value=csrfToken)
+    input(name="answerId" type="hidden" value=answer.id)
+    input(name="userId" type="hidden" value=answer.userId)
+    label(for="commentMessage")
+    input(name="commentMessage" type="text" placeholder="(Respond with comment here)")
+    button(type="submit") Submit

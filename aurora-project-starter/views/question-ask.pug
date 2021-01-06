@@ -4,25 +4,24 @@ append head
     link(rel='stylesheet' href='/stylesheets/question.css')
 
 block content
-    form(action="/questions" method="post" class="form child")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        label(for="title") Your Question:
-        div
-        input(type="text" name="title" class="form__input_field" required)
+    div.parent
+        form(action="/questions" method="post" class="form child")
+            h1.form__title Add a Question
+            input(type="hidden" name="_csrf" value=csrfToken)
+            label(for="title") Your Question:
 
-        select(name="topicId" class="form__dropdown" required)
-            option(value="" disabled selected hidden) Topic
-            each topic in topics
-                option(value=topic.id class="form__dropdown--option")=topic.name
+            input(type="text" name="title" class="form__input_field" required)
 
-        select(name="expertiseId" class="form__dropdown" required)
-            option(value="" disabled selected hidden) Expertise Level
-            each expertise in expertises
-                option(value=expertise.id class="form__dropdown--option")=expertise.description
-        div
+            div
+                select(name="topicId" class="form__dropdown" required)
+                    option(value="" disabled selected hidden) Topic
+                    each topic in topics
+                        option(value=topic.id class="form__dropdown--option")=topic.name
 
-        label(for="message") Additional Information:
-        div
-        textarea(name="message" class="form__input_field textarea" required)
-        div
-        button(type="submit" class="form__submit_button") Submit
+                select(name="expertiseId" class="form__dropdown" required)
+                    option(value="" disabled selected hidden) Expertise Level
+                    each expertise in expertises
+                        option(value=expertise.id class="form__dropdown--option")=expertise.description
+            label(for="message") Additional Information:
+            textarea(name="message" class="form__input_field" placeholder="Add context to your question here..." required)
+            button(type="submit" class="form__submit_button") Submit

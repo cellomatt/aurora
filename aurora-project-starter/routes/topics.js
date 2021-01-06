@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db/models");
-const { Topic } = db;
+const { Topic, Question } = db;
 const { asyncHandler } = require("../utils/utils");
 
 router.get(
@@ -18,11 +18,16 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async (req, res, next) => {
-    const topic = await Topic.findOne({ where: { id: req.params.id } });
-    console.log(topic.name);
-    // redir/render
+    const topic = await Topic.findByPk(req.params.id);
+    const questions = await Question.findAll({
+      where: { topicId: req.params.id },
+    });
+    res.render("topic-view", {
+      questions,
+      topic,
+      title: `Topic: ${topic.name}`,
+    });
   })
 );
-
 
 module.exports = router;

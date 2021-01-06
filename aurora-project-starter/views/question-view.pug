@@ -10,3 +10,6 @@ block content
     label(for="message")
     input(name="message" type="text" placeholder="Answer question here")
     button(type="submit") Submit
+  div
+    each answer in answers
+        p= answer.message 

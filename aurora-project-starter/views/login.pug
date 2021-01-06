@@ -12,6 +12,7 @@ block content
       h1.form__title Log In
       +validationErrorSummary(errors)
       form(action='/login' method='post')
+        input(type="hidden" name="_csrf" value=csrfToken)
         label(for='username') Username:
         input(type="text" name="username" class="form__input_field" required)
         div
@@ -19,6 +20,8 @@ block content
         input(type="password" name="password" class="form__input_field" required)
         div
         button(type="submit" class="form__submit_button") Log In
+      form(action="/login/demo" method="post")
         input(type="hidden" name="_csrf" value=csrfToken)
-        div.small_hyperlink
-          a(href='/signup') Don't have an account? Sign up here.
+        button(type="submit" class="form__submit_button") Demo User
+      div.small_hyperlink
+        a(href='/signup') Don't have an account? Sign up here.

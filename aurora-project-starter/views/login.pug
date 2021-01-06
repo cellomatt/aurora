@@ -19,6 +19,8 @@ block content
         input(type="password" name="password" class="form__input_field" required)
         div
         button(type="submit" class="form__submit_button") Log In
-        input(type="hidden" name="_csrf" value=csrfToken)
+        form(action="/login/demo" method="post")
+          input(type="hidden" name="_csrf" value=csrfToken)
+          button(type="submit" class="form__submit_button") Demo User
         div.small_hyperlink
           a(href='/signup') Don't have an account? Sign up here.

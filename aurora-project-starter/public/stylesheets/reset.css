@@ -1,14 +1,19 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+html {
+    background-color: #00b7ff;
+    background: url("/images/geometry.png") repeat 0 0;
 }
 
 a {
-  color: #00b7ff;
+    color: #00b7ff;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 h1,
@@ -26,34 +31,34 @@ span,
 body,
 header,
 nav {
-  font-size: 1rem;
-  color: inherit;
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  font-weight: normal;
+    font-size: 1rem;
+    color: inherit;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-weight: normal;
 }
 
 h1 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .parent {
-  position: relative;
+    position: relative;
 }
 
 .child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .nav_bar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
 }

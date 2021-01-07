@@ -4,7 +4,7 @@ append head
     link(rel='stylesheet' href='/stylesheets/topics.css')
 
     link(rel="preconnect" href="https://fonts.gstatic.com")
-    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet")
+    link(link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet")
 
 block content
     div.parent
@@ -14,3 +14,4 @@ block content
                         img.thumbnail(src=`../images/topic_thumbnail/${topic.id}.png`)
                         div.content_box__contents
                             a.content_box__text(href=`/topics/${topic.id}`)= topic.name
+    p.attribution_link Icons made by Freepik from #[a(href="https://www.flaticon.com/") www.flaticon.com]

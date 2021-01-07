@@ -190,3 +190,10 @@ textarea {
 .nav__search_button:hover {
     background-color: #9e2828;
 }
+
+.attribution_link {
+    float: right;
+    margin-right: 20px;
+    font-style: italic;
+    color: rgb(80, 80, 80);
+}

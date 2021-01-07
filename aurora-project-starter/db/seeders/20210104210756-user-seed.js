@@ -1,52 +1,44 @@
 'use strict';
+const faker = require('faker')
+const bcrypt = require('bcryptjs')
+
+
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
+    const hashedPassword = (password) => bcrypt.hashSync(password, 10);
 
-      return queryInterface.bulkInsert('Users', [
-        {
-          username: 'John_Doe',
-          email: 'jd@gmail.com',
-          hashedPassword: 'hpassword',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          username: 'demo_user',
-          email: 'demo@email.com',
-          hashedPassword: 'password',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          username: 'aurorapro97',
-          email: 'test@gmail.com',
-          hashedPassword: 'password',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          username: 'smallgiraffe',
-          email: 'giraffe@email.com',
-          hashedPassword: 'password',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          username: 'fuzzybunny',
-          email: 'bunny@email.com',
-          hashedPassword: 'password',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          username: 'ilovedogs49',
-          email: 'woof@email.com',
-          hashedPassword: 'password',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-    ], {});
+    let userArray = [
+      {
+        username: 'demo_user',
+        email: 'demo@email.com',
+        hashedPassword: hashedPassword('password'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+    ]
+
+    for (let i=0; i<50; i++) {
+      let password = hashedPassword(faker.internet.password());
+      let username;
+      const getUsername = () => {
+        username = faker.internet.userName()
+          if (username.length > 15) {
+              username = username.slice(0, 14)
+          }
+      };
+      getUsername();
+      const user = {
+        username,
+        email: faker.internet.email(),
+        hashedPassword: password,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
+      userArray.push(user);
+    }
+
+    return queryInterface.bulkInsert('Users', userArray, {});
 
   },
 

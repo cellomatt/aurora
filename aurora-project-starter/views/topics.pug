@@ -1,5 +1,16 @@
 extends layout.pug
 
+append head
+    link(rel='stylesheet' href='/stylesheets/topics.css')
+
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet")
+
 block content
-    each topic in topics
-        a(href=`/topics/${topic.id}`)= topic.name
+    div.parent
+        div.topic_container
+            each topic in topics
+                div.content_box
+                        img.thumbnail(src=`../images/topic_thumbnail/${topic.id}.png`)
+                        div.content_box__contents
+                            a.content_box__text(href=`/topics/${topic.id}`)= topic.name

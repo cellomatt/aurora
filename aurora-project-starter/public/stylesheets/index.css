@@ -34,12 +34,12 @@ h1 {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    margin: auto;
+    margin: 75px;
 }
 
 .form__title {
     text-align: center;
-    padding: 10px;
+    padding: 10px 0 20px 0;
 }
 
 .form__sub_label {
@@ -53,7 +53,7 @@ h1 {
 }
 
 .form__dropdown {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     margin: 5px 10px 15px 0px;
     background-color: #c12f2f;
     color: white;
@@ -71,9 +71,10 @@ h1 {
     border: none;
 }
 
-.textarea {
+textarea {
     resize: vertical;
     height: 150px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .topnav {
@@ -82,6 +83,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 100px;
 }
 
 .topnav a {
@@ -90,7 +94,30 @@ h1 {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+}
 
+.topnav a:hover {
+    color: black;
+    border-radius: 4px;
+}
+
+.topnav__button:hover {
+    background-color: #ddd;
+}
+
+.topnav_user_auth {
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: sticky;
+    top: 0;
+    z-index: 100px;
 }
 
 .flex-containter {
@@ -99,15 +126,11 @@ h1 {
     width: 1000px;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-    border-radius: 4px;
-}
-
 .logo {
     align-self: flex-start;
 }
+
+
 
 .nav__submit_button {
     background-color: #c12f2f;
@@ -118,6 +141,8 @@ h1 {
     cursor: pointer;
     font-size: 16px;
     margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .nav__submit_button:hover {
@@ -132,7 +157,6 @@ h1 {
     margin: 15px;
     flex: 1;
     max-width: 500px;
-
 }
 
 
@@ -165,4 +189,11 @@ h1 {
 
 .nav__search_button:hover {
     background-color: #9e2828;
+}
+
+.attribution_link {
+    float: right;
+    margin-right: 20px;
+    font-style: italic;
+    color: rgb(80, 80, 80);
 }

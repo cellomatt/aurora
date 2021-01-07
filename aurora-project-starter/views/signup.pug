@@ -1,25 +1,32 @@
 extends layout.pug
 
+include utils.pug
+
+block nav
+  div.topnav_user_auth
+      a(href="/")
+        img.logo(src="/images/logo.svg" width="150px")
 
 block content
-  //- div.parent
-  div.form.child
-    h1.form__title Sign Up
-    form(action="/signup" method="post")
-      label(for="username") Username:
-      input(type="text" name="username" class="form__input_field" placeholder="Your username.." required)
-      div
-      label(for="email") Email:
-      input(type="email" name="email" class="form__input_field"  placeholder="Your email.." required)
-      div
-      label(for="password") Password:
-      p.form__sub_label Please include at least one capital letter, one lowercase letter, one number, and one special character (!@#$%^&*).
-      input(type="password" name="password" class="form__input_field" placeholder="Your super secret password!" required)
-      div
-      label(for="confirmPassword") Confirm Password:
-      input(type="password" name="confirmPassword" class="form__input_field" placeholder="One more time.." required)
-      div
-      button(type="submit" class="form__submit_button") Sign Up
-      div.small_hyperlink
-        a(href='/login') Already have an account? Log in here.
-      input(type="hidden" name="_csrf" value=csrfToken)
+  div.parent
+    div.form.child
+      h1.form__title Sign Up
+      +validationErrorSummary(errors)
+      form#signUp(action="/signup" method="post")
+        label(for="username") Username:
+        input(type="text" name="username" class="form__input_field" placeholder="exampleuser981" required)
+        div
+        label(for="email") Email:
+        input(type="email" name="email" class="form__input_field"  placeholder="youremail@email.com" required)
+        div
+        label(for="password") Password:
+        p.form__sub_label Please enter a password of at least 7 characters, including at least one capital letter, one lowercase letter, one number, and one special character (!@#$%^&*).
+        input(type="password" name="password" id="password" class="form__input_field" placeholder="Your super secret password!" required)
+        div
+        label(for="confirmPassword") Confirm Password:
+        input(type="password" name="confirmPassword" id="confirmPassword" class="form__input_field" placeholder="One more time..." required)
+        div
+        button(type="submit" class="form__submit_button") Sign Up
+        div.small_hyperlink
+          a(href='/login') Already have an account? Log in here.
+        input(type="hidden" name="_csrf" value=csrfToken)

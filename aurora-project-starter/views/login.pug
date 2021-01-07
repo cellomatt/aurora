@@ -1,17 +1,27 @@
 extends layout.pug
 
-block content
+include utils.pug
 
-  div.form.child
-    h1.form__title Log In
-    form(action='/login' method='post')
-      label(for='username') Username:
-      input(type="text" name="username" class="form__input_field" required)
-      div
-      label(for="password") Password:
-      input(type="password" name="password" class="form__input_field" required)
-      div
-      button(type="submit" class="form__submit_button") Log In
-      input(type="hidden" name="_csrf" value=csrfToken)
+block nav
+  div.topnav_user_auth
+      a(href="/")
+        img.logo(src="/images/logo.svg" width="150px")
+block content
+  div.parent
+    div.form.child
+      h1.form__title Log In
+      +validationErrorSummary(errors)
+      form(action='/login' method='post')
+        input(type="hidden" name="_csrf" value=csrfToken)
+        label(for='username') Username:
+        input(type="text" name="username" class="form__input_field" required)
+        div
+        label(for="password") Password:
+        input(type="password" name="password" class="form__input_field" required)
+        div
+        button(type="submit" class="form__submit_button") Log In
+      form(action="/login/demo" method="post")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        button(type="submit" class="form__submit_button") Demo User
       div.small_hyperlink
         a(href='/signup') Don't have an account? Sign up here.

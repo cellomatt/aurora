@@ -45,14 +45,14 @@ h1 {
 }
 
 .parent {
-  position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    align-self: center;
+    padding-top: 200px;
 }
 
 .nav_bar {
@@ -86,4 +86,13 @@ h1 {
 .main__center_col {
   flex-grow: 2;
   width: 50%;
+}
+
+.errors-alert {
+    border: none;
+    border-radius: 4px;
+    background-color: lightcoral;
+    box-sizing: border-box;
+    padding: 5px 20px 15px 25px;
+    margin: 10px 10px 20px;
 }

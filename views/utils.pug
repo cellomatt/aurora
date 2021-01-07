@@ -1,9 +1,11 @@
 
-mixin question({ User: { username }, title, message })
-    div
-        h2= username
-        h3= title
-        h3= message
+mixin question({ User: { username }, title, message, id })
+    div.question_box
+        h3.question_title= title
+        h2.question_username= username
+        h3.question_message= message
+        if locals.authenticated
+          a.question_answer(href=`/questions/${id}`) answer
 
 mixin validationErrorSummary(errors)
   if errors

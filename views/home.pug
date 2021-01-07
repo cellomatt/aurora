@@ -1,11 +1,15 @@
 extends layout.pug
 
 include utils.pug
+append head 
+    link(rel='stylesheet' href='/stylesheets/topics.css')
 
 block content
     div.main
         div.main__left_col
         div.main__center_col
+            div.title_box
+                h1.title Questions
             each question in questions
                 +question(question)
         div.main__right_col

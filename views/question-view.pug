@@ -2,6 +2,7 @@ extends layout.pug
 block content
   h1= question.title
   h2= question.message
+  h3= question.Expertise.description
   //- h3= question.User.username
   form(action="/answers" method="post")
     input(name="userId" type="hidden" value=question.userId)

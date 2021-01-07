@@ -75,6 +75,11 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: "Plants & Animals",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

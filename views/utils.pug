@@ -1,9 +1,17 @@
 
-mixin question({ User: { username }, title, message, id })
+mixin question({ User: { username }, title, message, id,  expertiseId })
     div.question_box
         h3.question_title= title
         h3.question_message= message
-        h2.question_username=`${username}`
+        div.question_footer
+          h2.question_username= username
+          if expertiseId === 1
+            h2.question_expertise__nov
+          if expertiseId === 2
+            h2.question_expertise__int
+          if expertiseId === 3
+            h2.question_expertise__exp
+
         //- if locals.authenticated
         //-   a.question_answer(href=`/questions/${id}`) answer
 

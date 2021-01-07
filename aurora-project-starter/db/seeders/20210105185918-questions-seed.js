@@ -6,7 +6,7 @@ module.exports = {
       "Questions",
       [
         {
-          title: "What is the hottest new techonology",
+          title: "What is the hottest new technology?",
           message:
             "I am doing a research project for school and looking for the hottest new technology.",
           expertiseId: 1,

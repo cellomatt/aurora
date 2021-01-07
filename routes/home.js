@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require("../db/models");
 const {
-    Question, 
+    Question,
     User
 } = db;
 const {
@@ -11,10 +11,11 @@ const {
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res, next) => {
-    const questions = await Question.findAll({ include: User });
+    const questions = await Question.findAll({ include: [User, Topic, Expertise] });
+
     res.render('home', {
         title: 'Home',
-        questions
+        questions,
     });
 }));
 

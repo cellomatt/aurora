@@ -2,10 +2,10 @@
 mixin question({ User: { username }, title, message, id })
     div.question_box
         h3.question_title= title
-        h2.question_username= username
         h3.question_message= message
-        if locals.authenticated
-          a.question_answer(href=`/questions/${id}`) answer
+        h2.question_username=`${username}`
+        //- if locals.authenticated
+        //-   a.question_answer(href=`/questions/${id}`) answer
 
 mixin validationErrorSummary(errors)
   if errors
@@ -14,4 +14,3 @@ mixin validationErrorSummary(errors)
       ul
         each error in errors
           li= error
-

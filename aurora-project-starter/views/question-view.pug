@@ -8,7 +8,7 @@ block content
     input(name="questionId" type="hidden" value=question.id)
     input(name="_csrf" type="hidden" value=csrfToken)
     label(for="message")
-    input(name="message" type="text" placeholder="Answer question here")
+    textarea(name="message" type="text" placeholder="Answer question here")
     button(type="submit") Submit
   div
     each answer in answers

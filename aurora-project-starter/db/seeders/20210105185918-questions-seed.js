@@ -150,6 +150,15 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          title: "What is the largest land animal?",
+          message: "I want to know what biggest, heaviest land animal is.",
+          expertiseId: 2,
+          topicId: 15,
+          userId: 39,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

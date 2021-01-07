@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require("../db/models");
-const {
-    Op
-} = require("sequelize");
+const { Op } = require("sequelize");
 const {
     User,
     Question,
@@ -11,16 +9,13 @@ const {
     Topic,
     Answer
 } = db;
-const {
-    asyncHandler
-} = require("../utils/utils");
+const { asyncHandler } = require("../utils/utils");
 
 router.post("/", asyncHandler(async (req, res) => {
     const {
         searchTerm
     } = req.body;
 
-    console.log(searchTerm, "------------")
     const results = await Question.findAll({
         where: {
             [Op.or]: [{
@@ -35,7 +30,7 @@ router.post("/", asyncHandler(async (req, res) => {
                 }
             ]
         },
-        include: 
+        include:
              [Topic, Expertise, User]
         ,
         order: [
@@ -43,9 +38,23 @@ router.post("/", asyncHandler(async (req, res) => {
         ]
 
     })
-    console.log('-------------', results);
+
+    let topics = []
+    let expertises = [];
+
+    results.forEach((result) => {
+        if (!topics.includes(result.Topic.name)) {
+            topics.push(result.Topic.name)
+        }
+        if (!expertises.includes(result.Expertise.description)) {
+            expertises.push(result.Expertise.description)
+        }
+    })
+
     res.render('search', {
-        results
+        results,
+        topics,
+        expertises,
     });
 }))
 

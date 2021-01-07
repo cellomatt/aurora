@@ -19,7 +19,7 @@ html
           a.topnav__button(href="/questions/new") 📝 Add a Question
       form(action="/search" method="post" style="display:flex")
         button.nav__search_button(type="submit") 🔍
-        input.search_bar(type="text" name="searchTerm" placeholder="Search")
+        input.search_bar(type="text" name="searchTerm" placeholder="Search" required)
 
       if locals.authenticated
         form( action='/logout' method='post')

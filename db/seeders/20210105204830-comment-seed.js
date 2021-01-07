@@ -10,7 +10,7 @@ module.exports = {
           userId: 12,
           createdAt: new Date(),
           updatedAt: new Date()
-        }
+        },
         {
           message: 'Wow, what a great solution! Thanks for this.',
           answerId: 2,

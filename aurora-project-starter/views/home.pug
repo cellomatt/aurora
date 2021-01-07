@@ -1,7 +1,11 @@
 extends layout.pug
 
+include utils.pug
+
 block content
-    each question in questions
-        h2= question.User.username
-        h3= question.title
-        h3= question.message
+    div.main
+        div.main__left_col
+        div.main__center_col
+            each question in questions
+                +question(question)
+        div.main__right_col

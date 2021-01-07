@@ -1,3 +1,10 @@
+
+mixin question({ User: { username }, title, message })
+    div
+        h2= username
+        h3= title
+        h3= message
+
 mixin validationErrorSummary(errors)
   if errors
     div(class='errors-alert' role='alert')
@@ -5,3 +12,4 @@ mixin validationErrorSummary(errors)
       ul
         each error in errors
           li= error
+

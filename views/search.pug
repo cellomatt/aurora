@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+
+    each result in results 
+        div
+            h1= result.title 
+            h2= result.message 
+            h3= result.Topic.name
+            h3= result.Expertise.description
+            

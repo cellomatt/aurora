@@ -18,6 +18,7 @@ const homeRouter = require("./routes/home");
 const topicsRouter = require("./routes/topics");
 const answersRouter = require("./routes/answers");
 const commentsRouter = require("./routes/comments");
+const searchRouter = require("./routes/search");
 
 const app = express();
 
@@ -69,7 +70,7 @@ app.use("/questions", questionsRouter);
 app.use("/topics", topicsRouter);
 app.use("/answers", answersRouter);
 app.use("/comments", commentsRouter);
-
+app.use("/search", searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

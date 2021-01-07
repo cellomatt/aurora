@@ -17,9 +17,9 @@ html
         a.topnav__button(href="/topics") 📄 Topics
         if locals.authenticated
           a.topnav__button(href="/questions/new") 📝 Add a Question
-
-      button.nav__search_button 🔍
-      input.search_bar(type="text" placeholder="Search")
+      form(action="/search" method="post" style="display:flex")
+        button.nav__search_button(type="submit") 🔍
+        input.search_bar(type="text" name="searchTerm" placeholder="Search")
 
       if locals.authenticated
         form( action='/logout' method='post')

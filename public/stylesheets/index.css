@@ -185,6 +185,8 @@ textarea {
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
+    max-height: 40px;
+    margin-top: 10px;
 }
 
 .nav__search_button:hover {

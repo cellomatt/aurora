@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         message: "Chernobyl could be fascinating, I've heard the tour is pretty entertaining.",
-        questionId: 2,
+        questionId: 3,
         userId: 50,
         createdAt: new Date(),
         updatedAt: new Date()

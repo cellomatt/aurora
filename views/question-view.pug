@@ -1,16 +1,34 @@
 extends layout.pug
+
+include utils.pug
+
 block content
-  h1= question.title
-  h2= question.message
-  h3= question.Expertise.description
-  //- h3= question.User.username
-  form(action="/answers" method="post")
-    input(name="userId" type="hidden" value=question.userId)
-    input(name="questionId" type="hidden" value=question.id)
-    input(name="_csrf" type="hidden" value=csrfToken)
-    label(for="message")
-    textarea(name="message" type="text" placeholder="Answer question here")
-    button(type="submit") Submit
-  div
-    each answer in answers
-        a(href=`/answers/${answer.id}`)= answer.message
+  div.main
+    div.main__left_col
+    div.main__center_col
+      div.question_box#question_view
+        h3.question_title= question.title
+        hr.solid
+        h2.question_message= question.message
+          div.question_footer
+            //- h2.question_date= createdAt
+            if question.expertiseId === 1
+              h2.question_expertise__nov
+            if question.expertiseId === 2
+              h2.question_expertise__int
+            if question.expertiseId === 3
+              h2.question_expertise__exp
+            h2.question_username= question.User.username
+
+      //- h3= question.User.username
+      form(action="/answers" method="post")
+        input(name="userId" type="hidden" value=question.userId)
+        input(name="questionId" type="hidden" value=question.id)
+        input(name="_csrf" type="hidden" value=csrfToken)
+        label(for="message")
+        each answer in answers
+          a(href=`/answers/${answer.id}`)= answer.message
+        textarea(name="message" type="text" class="form__input_field" placeholder="Answer question here")
+        button(type="submit") Submit
+      div
+    div.main__right_col  

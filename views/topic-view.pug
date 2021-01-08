@@ -3,8 +3,13 @@ extends layout.pug
 include utils.pug
 
 block content
-    h1=topic.name
-    each question in questions
-        div
-            a(href=`/questions/${question.id}`)
-                p=question.title
+    div.main
+        div.main__left_col
+        div.main__center_col
+            h1.topic_headline=topic.name
+            each question in questions
+                +question(question)
+        div.main__right_col            
+//- div
+//-     a(href=`/questions/${question.id}`)
+        p=question.title

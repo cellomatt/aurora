@@ -12,6 +12,9 @@ const {
 const { asyncHandler } = require("../utils/utils");
 
 router.post("/", asyncHandler(async (req, res) => {
+
+    
+
     const {
         searchTerm
     } = req.body;
@@ -62,6 +65,8 @@ router.post("/", asyncHandler(async (req, res) => {
             [Op.in]: expertiseIds
         }
     }})
+
+    
 
     res.render('search', {
         results,

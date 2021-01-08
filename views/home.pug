@@ -14,8 +14,7 @@ block content
                 div.topic_contents_test
                     p.topics Topics
                     each topic in topics
-                        a(href=`/topics/${topic.id}`).sidebar_image
-                            img.sidebar_image(src=`../images/topic_thumbnail/${topic.id}.png`)
+                        a(href=`/topics/${topic.id}`).topic_list= topic.name
 
 
         div.main__center_col

@@ -1,11 +1,11 @@
 
 mixin question({ User: { username }, title, message, id,  expertiseId })
-    h3.question_title= title
     div
      a(href=`/questions/${id}`).question_box
+      h3.question_title= title
         h3.question_message= message
           div.question_footer
-          h2.question_username= username
+          h2.question_username= `@ ${username}`
           if expertiseId === 1
             h2.question_expertise__nov
           if expertiseId === 2

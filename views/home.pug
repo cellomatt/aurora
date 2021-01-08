@@ -10,8 +10,8 @@ block content
     div.main
         div.main__left_col
             div.topic_box
-                h3.topic_title Topics
                 div.topic_contents
+                    p Topics
                     each topic in topics
                         a(href=`/topics/${topic.id}`)= topic.name
 

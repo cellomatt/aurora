@@ -1,11 +1,27 @@
 extends layout.pug
 
 include utils.pug
+append head
+    link(rel='stylesheet' href='/stylesheets/topics.css')
+    link(rel='stylesheet' href='/stylesheets/test.css')
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400&display=swap" rel="stylesheet")
 
 block content
     div.main
         div.main__left_col
+            div.topic_box
+                div.topic_contents_test
+                    each topic in topics
+                        div.topic_containers
+                            a(href=`/topics/${topic.id}`).topic_list
+                                img.topic_thumbnail(src=`../images/topic_thumbnail/${topic.id}.png`)
+                                p.topic_text= topic.name
+                            //- img(href=`/topics/${topic.id}`).topic_list= topic.name
+
+
         div.main__center_col
+
             each question in questions
                 +question(question)
         div.main__right_col

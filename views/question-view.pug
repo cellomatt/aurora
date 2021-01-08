@@ -22,7 +22,7 @@ block content
           each answer in answers
             div
               h2= answer.message
-              a(href=`/answers/${answer.id}`)= View Comments
+              a(href=`/answers/${answer.id}`) View Comments
       if locals.authenticated
         form(action="/answers" method="post")
           input(name="userId" type="hidden" value=question.userId)

@@ -18,7 +18,7 @@ block content
                 option(value=expertise.description class="form__dropdown--option")=expertise.description
 
         each result in results
-            div(class= `${result.Topic.name} ${result.Expertise.description} result`)
+            div(class= `${result.Topic.id} ${result.Expertise.description} result`)
                 h1= result.title
                 h2= result.message
                 h3= result.Topic.name

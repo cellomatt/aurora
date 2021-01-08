@@ -11,12 +11,17 @@ mixin question({ User: { username }, title, message, id,  expertiseId, createdAt
         div.question_footer
           //- h2.question_date= createdAt
           if expertiseId === 1
-            h2.question_expertise__nov
+            div.question_expertise_label
+                h2.question_expertise__nov
+                h2 Novice
           if expertiseId === 2
-            h2.question_expertise__int
+            div.question_expertise_label
+                h2.question_expertise__int
+                h2 Intermediate
           if expertiseId === 3
-            h2.question_expertise__exp
-
+            div.question_expertise_label
+                h2.question_expertise__exp
+                h2 Expert
           h2.question_username= username
 
           //- if locals.authenticated

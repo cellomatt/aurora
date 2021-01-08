@@ -555,7 +555,6 @@ textarea {
   padding-left: 10px;
   color: rgb(34, 34, 34);
   height: 75%;
-  text-overflow: ellipsis;
 }
 
 .question_date {
@@ -590,9 +589,16 @@ textarea {
   padding-left: 10px;
 }
 
+.question_expertise_label {
+  font-size: 14px;
+  color: rgb(175, 175, 175);
+  display: inline-block;
+  flex-wrap: flex-end;
+  width: 200px;
+  align-self: flex-end;
+}
+
 .question_expertise__nov {
-  font-size: 18px;
-  color: #222222;
   margin-right: 5px;
   padding-right: 15px;
   width: 15px;
@@ -600,11 +606,10 @@ textarea {
   background: green;
   border-radius: 50%;
   align-self: flex-end;
+  float: left;
 }
 
 .question_expertise__int {
-  font-size: 18px;
-  color: #222222;
   margin-right: 5px;
   padding-right: 15px;
   width: 15px;
@@ -612,12 +617,10 @@ textarea {
   background: rgb(247, 226, 41);
   border-radius: 50%;
   align-self: flex-end;
-  /* border: 0.5px solid #222222; */
+  float: left;
 }
 
 .question_expertise__exp {
-  font-size: 18px;
-  color: #222222;
   margin-right: 5px;
   padding-right: 15px;
   width: 15px;
@@ -625,6 +628,7 @@ textarea {
   background: #c12f2f;
   border-radius: 50%;
   align-self: flex-end;
+  float: left;
 }
 
 #question_view:hover {
@@ -643,4 +647,54 @@ textarea {
 #search_result_link {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.answer_box {
+  color: #333;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  overflow-wrap: break-word;
+  /* border-radius: 5px; */
+  background-color: rgba(242, 242, 242, 0.6);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.answer {
+  text-align: left;
+}
+
+.answer_title {
+  font-size: 18px;
+  font-weight: bolder;
+  width: 95%;
+  padding: 20px 10px 20px;
+
+}
+
+.answer_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.answer_username {
+  font-size: 14px;
+  color: rgb(175, 175, 175);
+  font-weight: 300;
+  text-transform: uppercase;
+  height: 75%;
+  /* width: 64px; */
+  text-align: right;
+}
+
+.view_comments_link {
+  font-size: 12px;
+}
+
+.view_comments_link:hover {
+
 }

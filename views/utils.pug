@@ -4,13 +4,12 @@ mixin question({ User: { username }, title, message, id,  expertiseId, createdAt
      a(href=`/questions/${id}`).question_box
       h3.question_title= title
 
-      h2.question_username= username
       hr.solid
       h2.question_message= message
 
 
         div.question_footer
-          h2.question_date= createdAt
+          //- h2.question_date= createdAt
           if expertiseId === 1
             h2.question_expertise__nov
           if expertiseId === 2
@@ -18,6 +17,7 @@ mixin question({ User: { username }, title, message, id,  expertiseId, createdAt
           if expertiseId === 3
             h2.question_expertise__exp
 
+          h2.question_username= username
 
           //- if locals.authenticated
           //-   a.question_answer(href=`/questions/${id}`) answer

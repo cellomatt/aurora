@@ -21,7 +21,6 @@ router.get(
         const topic = await Topic.findByPk(req.params.id);
         const questions = await Question.findAll({
             where: { topicId: req.params.id },
-            include: { include: User },
         });
         res.render("topic-view", {
             questions,

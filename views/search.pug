@@ -7,12 +7,12 @@ block content
         select(name="topicId" class="form__dropdown")
             option(value="" disabled selected hidden) Topic
             each topic in topics
-                option(value=topic class="form__dropdown--option")=topic
+                option(value=topic.id class="form__dropdown--option")=topic.name
 
         select(name="expertiseId" class="form__dropdown")
             option(value="" disabled selected hidden) Expertise Level
             each expertise in expertises
-                option(value=expertise class="form__dropdown--option")=expertise
+                option(value=expertise.description class="form__dropdown--option")=expertise.description
 
         each result in results
             div

@@ -1,0 +1,26 @@
+extends layout.pug
+append head
+    link(rel='stylesheet' href='/stylesheets/topics.css')
+
+block content
+    if results.length > 0
+        select(name="topicId" class="form__dropdown")
+            option(value="" disabled selected hidden) Topic
+            each topic in topics
+                option(value=topic.id class="form__dropdown--option")=topic.name
+
+        select(name="expertiseId" class="form__dropdown")
+            option(value="" disabled selected hidden) Expertise Level
+            each expertise in expertises
+                option(value=expertise.description class="form__dropdown--option")=expertise.description
+
+        each result in results
+            div
+                h1= result.title
+                h2= result.message
+                h3= result.Topic.name
+                h3= result.Expertise.description
+
+    else
+        div
+            h1 There are no results for this search term. Ask a question <a id="search_result_link" href="/questions/new">here</a>.

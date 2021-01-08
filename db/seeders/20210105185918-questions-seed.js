@@ -152,7 +152,7 @@ module.exports = {
         },
         {
           title: "What is the largest land animal?",
-          message: "I want to know what biggest, heaviest land animal is.",
+          message: "I want to know what the biggest, heaviest land animal is.",
           expertiseId: 2,
           topicId: 15,
           userId: 39,

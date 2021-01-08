@@ -635,3 +635,12 @@ textarea {
   display: flex;
   justify-content: space-between;
 }
+
+#search_form {
+  display: flex;
+}
+
+#search_result_link {
+  font-size: 2rem; 
+  font-weight: bold;
+}

@@ -101,24 +101,25 @@ router.post(
 );
 
 router.get(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    const question = await Question.findByPk(req.params.id, {
-      include: [User, Topic, Expertise],
-    });
-    console.log(question);
-    const answers = await Answer.findAll({
-      where: {
-        questionId: req.params.id,
-      },
-    });
+    "/:id",
+    asyncHandler(async (req, res) => {
+      const question = await Question.findByPk(req.params.id, {
+        include: [User, Topic, Expertise],
+      });
 
-    res.render("question-view", {
-      question,
-      answers,
-      title: `Question: ${question.id}`,
-    });
-  })
-);
+      const answers = await Answer.findAll({
+        where: {
+          questionId: req.params.id,
+        },
+      });
+      res.render("question-view", {
+        question,
+        answers,
+        title: `Question: ${question.id}`,
+      });
+    })
+  );
+
+
 
 module.exports = router;

@@ -1,9 +1,26 @@
 
-mixin question({ User: { username }, title, message })
+mixin question({ User: { username }, title, message, id,  expertiseId, createdAt })
     div
-        h2= username
-        h3= title
-        h3= message
+     a(href=`/questions/${id}`).question_box
+      h3.question_title= title
+
+      hr.solid
+      h2.question_message= message
+
+
+        div.question_footer
+          //- h2.question_date= createdAt
+          if expertiseId === 1
+            h2.question_expertise__nov
+          if expertiseId === 2
+            h2.question_expertise__int
+          if expertiseId === 3
+            h2.question_expertise__exp
+
+          h2.question_username= username
+
+          //- if locals.authenticated
+          //-   a.question_answer(href=`/questions/${id}`) answer
 
 mixin validationErrorSummary(errors)
   if errors
@@ -12,4 +29,3 @@ mixin validationErrorSummary(errors)
       ul
         each error in errors
           li= error
-

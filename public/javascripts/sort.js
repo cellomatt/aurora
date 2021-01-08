@@ -1,8 +1,10 @@
+
 document.addEventListener('DOMContentLoaded', ev => {
   localStorage.clear();
 })
 
 const filterText = id => {
+
   let select = document.getElementById(id);
   let option = select.value;
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db/models");
-const { Topic, Question } = db;
+const { Topic, Question, User } = db;
 const { asyncHandler } = require("../utils/utils");
 
 router.get(
@@ -21,6 +21,7 @@ router.get(
     const topic = await Topic.findByPk(req.params.id);
     const questions = await Question.findAll({
       where: { topicId: req.params.id },
+      include: User,
     });
     res.render("topic-view", {
       questions,

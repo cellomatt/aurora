@@ -9,13 +9,13 @@ block content
             option(value="" disabled selected hidden) Topic
             option(value="All") All
             each topic in topics
-                option(value=topic class="form__dropdown--option")=topic
+                option(value=topic.id class="form__dropdown--option")=topic.name
 
         select#expertiseSelect(name="expertiseId" class="form__dropdown" onchange="filterText('expertiseSelect')")
             option(value="" disabled selected hidden) Expertise Level
             option(value="All") All
             each expertise in expertises
-                option(value=expertise class="form__dropdown--option")=expertise
+                option(value=expertise.description class="form__dropdown--option")=expertise.description
 
         each result in results
             div(class= `${result.Topic.name} ${result.Expertise.description} result`)

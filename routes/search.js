@@ -39,17 +39,29 @@ router.post("/", asyncHandler(async (req, res) => {
 
     })
 
-    let topics = []
-    let expertises = [];
+    let topicIds = []
+    let expertiseIds = [];
 
     results.forEach((result) => {
-        if (!topics.includes(result.Topic.name)) {
-            topics.push(result.Topic.name)
+        if (!topicIds.includes(result.Topic.id)) {
+            topicIds.push(result.Topic.id)
         }
-        if (!expertises.includes(result.Expertise.description)) {
-            expertises.push(result.Expertise.description)
+        if (!expertiseIds.includes(result.Expertise.id)) {
+            expertiseIds.push(result.Expertise.id)
         }
     })
+
+    const topics = await Topic.findAll({ where: {
+        id: {
+            [Op.in]: topicIds
+        }
+    }})
+
+    const expertises = await Expertise.findAll({ where: {
+        id: {
+            [Op.in]: expertiseIds
+        }
+    }})
 
     res.render('search', {
         results,

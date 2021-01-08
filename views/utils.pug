@@ -5,8 +5,8 @@ mixin question({ User: { username }, title, userId, message, id,  expertiseId, c
       div.title_container
         h3.question_title= title
         if uId === userId
-          form(method=`/delete/${id}` action='POST')
-            button.trash(type="submit") 🗑️
+          form(method=`POST` action=`/questions/${id}/delete`)
+            button.trash(type="submit" id= `trash${id}`) 🗑️
 
       hr.solid
       h2.question_message= message

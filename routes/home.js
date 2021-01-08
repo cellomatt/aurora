@@ -25,14 +25,6 @@ router.get('/', asyncHandler(async (req, res) => {
     });
 }));
 
-router.post(`/delete/:id`, asyncHandler(async (req, res) => {
-    const question = await Question.findByPk(req.params.id)
-    console.log("---------------------------" + question.title)
 
-    await question.destroy();
-
-
-    res.redirect('/')
-}));
 
 module.exports = router;

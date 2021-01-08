@@ -132,6 +132,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.5s;
   }
 
   .question_box h3 {
@@ -647,10 +648,24 @@
 
   .title_container {
       display: flex;
+      align-items: center;
   }
 
   .question_box:hover .trash {
       display: flex;
+      -webkit-animation: fadein 0.5s;
+      align-items: flex-end;
+
+  }
+
+  @keyframes fadein {
+      from {
+          opacity: 0;
+      }
+
+      to {
+          opacity: 1;
+      }
   }
 
 
@@ -658,9 +673,10 @@
       font-size: 18px;
       width: 35px;
       height: 30px;
-      align-self: flex-start;
+      align-self: flex-end;
+      justify-self: flex-end;
       border: none;
-      margin-top: 10px;
+      /* margin-top: 10px; */
       display: none;
       transition: 2s;
       cursor: pointer;

@@ -1,4 +1,4 @@
-body {
+  body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -641,6 +641,6 @@ textarea {
 }
 
 #search_result_link {
-  font-size: 2rem; 
+  font-size: 2rem;
   font-weight: bold;
 }

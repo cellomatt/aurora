@@ -20,7 +20,9 @@ block content
             h2.question_username= question.User.username
       div
           each answer in answers
-            a(href=`/answers/${answer.id}`)= answer.message
+            div
+              h2= answer.message
+              a(href=`/answers/${answer.id}`)= View Comments
       if locals.authenticated
         form(action="/answers" method="post")
           input(name="userId" type="hidden" value=question.userId)

@@ -1,26 +1,28 @@
 extends layout.pug
 append head
     link(rel='stylesheet' href='/stylesheets/topics.css')
+    script(src="/javascripts/sort.js" type="text/javascript" defer)
 
 block content
     if results.length > 0
-        select(name="topicId" class="form__dropdown")
+        select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
             option(value="" disabled selected hidden) Topic
+            option(value="All") All
             each topic in topics
                 option(value=topic class="form__dropdown--option")=topic
 
-        select(name="expertiseId" class="form__dropdown")
+        select#expertiseSelect(name="expertiseId" class="form__dropdown" onchange="filterText('expertiseSelect')")
             option(value="" disabled selected hidden) Expertise Level
+            option(value="All") All
             each expertise in expertises
                 option(value=expertise class="form__dropdown--option")=expertise
 
         each result in results
-            div
+            div(class= `${result.Topic.name} ${result.Expertise.description} result`)
                 h1= result.title
                 h2= result.message
                 h3= result.Topic.name
                 h3= result.Expertise.description
-
     else
         div
             h1 There are no results for this search term. Ask a question <a href="/questions/new" style="font-size: 2rem; font-weight: bold">here</a>.

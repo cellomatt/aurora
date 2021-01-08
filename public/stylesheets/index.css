@@ -252,7 +252,7 @@ textarea {
 .content_box__text {
     text-decoration: none;
     font-size: 180%;
-    font-family: "Roboto Slab", serif;
+    font-weight: 600;
     color: rgb(34, 34, 34);
 }
 
@@ -287,7 +287,7 @@ textarea {
     margin-bottom: 10px;
     padding-bottom: 10px;
     width: 100%;
-    height: 150px;
+    /* height: 150px; */
     background-color: rgba(242, 242, 242, 0.6);
     display: flex;
     flex-direction: column;
@@ -295,14 +295,15 @@ textarea {
 }
 
 .question_username {
-    font-size: 18px;
-    color: #222222;
+    font-size: 14px;
+    color: #764a77;
     padding-left: 10px;
+    font-weight: bold;
 }
 
 .question_title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 29px;
+    font-weight: bolder;
     width: 100%;
     padding-left: 10px;
     padding-top: 10px;

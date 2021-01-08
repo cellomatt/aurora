@@ -11,17 +11,14 @@ block content
     div.main
         div.main__left_col
             div.topic_box
-                div.topic_contents
-                    p Topics
+                div.topic_contents_test
+                    p.topics Topics
                     each topic in topics
-                        a(href=`/topics/${topic.id}`)= topic.name
+                        a(href=`/topics/${topic.id}`).sidebar_image
+                            img.sidebar_image(src=`../images/topic_thumbnail/${topic.id}.png`)
 
 
         div.main__center_col
-            div.title_box
-                h1.title Questions
-
-
 
             each question in questions
                 +question(question)

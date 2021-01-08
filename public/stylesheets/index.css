@@ -286,12 +286,14 @@ textarea {
     margin-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 10px;
+    padding-right: 10px;
     width: 100%;
     background-color: rgba(242, 242, 242, 0.795);
     display: flex;
     flex-direction: column;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-    text-overflow: ellipsis;
+    overflow: hidden;
+
 
 }
 
@@ -329,6 +331,7 @@ textarea {
     padding-left: 10px;
     color: rgb(34, 34, 34);
     height: 75%;
+    text-overflow: ellipsis;
 }
 
 .question_date {
@@ -352,7 +355,7 @@ textarea {
 .question_expertise__nov {
     font-size: 18px;
     color: #222222;
-    margin-right: 15px;
+    margin-right: 5px;
     padding-right: 15px;
     width: 15px;
     height: 15px;
@@ -364,7 +367,7 @@ textarea {
 .question_expertise__int {
     font-size: 18px;
     color: #222222;
-    margin-right: 15px;
+    margin-right: 5px;
     padding-right: 15px;
     width: 15px;
     height: 15px;
@@ -377,7 +380,7 @@ textarea {
 .question_expertise__exp {
     font-size: 18px;
     color: #222222;
-    margin-right: 15px;
+    margin-right: 5px;
     padding-right: 15px;
     width: 15px;
     height: 15px;

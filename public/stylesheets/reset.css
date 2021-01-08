@@ -131,6 +131,12 @@ h1 {
 
 }
 
+.question_box h3 {
+    line-height: 1;
+    margin: 0;
+    font-size: 1.7rem;
+}
+
 .question_box:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

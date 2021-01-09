@@ -19,17 +19,12 @@ router.get('/', asyncHandler(async (req, res) => {
         ],
      });
     const topics = await Topic.findAll()
-    // const userId = await auth.userId
-    const uId = req.session.auth.userId
 
     res.render('home', {
         title: 'Home',
         questions,
-        topics,
-        uId
+        topics
     });
 }));
-
-
 
 module.exports = router;

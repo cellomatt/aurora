@@ -1,15 +1,15 @@
 
-mixin question({ User: { username }, title, userId, message, id,  expertiseId, createdAt })
-    div(id=`trash-container-${id}`)
+mixin question({ User: { username }, title, message, id,  expertiseId, createdAt })
+    div
      a(href=`/questions/${id}`).question_box
-      div.title_container
-        h3.question_title= title
-        if uId === userId
-          form
-            button.trash(id=id) 🗑️
+      h3.question_title= title
+
       hr.solid
       h2.question_message= message
+
+
         div.question_footer
+          //- h2.question_date= createdAt
           if expertiseId === 1
             div.question_expertise_label
                 h2.question_expertise__nov

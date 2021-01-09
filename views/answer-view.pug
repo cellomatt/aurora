@@ -4,10 +4,7 @@ block content
   h1= question.title
   h2= answer.message
   each comment in comments
-    div(id=`comment-trash-container-${comment.id}`)
-      h3= comment.message
-      if comment.userId === userId
-        h3(id=comment.id class="commentTrash") 🗑️
+    h3= comment.message
   if locals.authenticated  
     form(action='/comments' method='post')
       input(name="_csrf" type="hidden" value=csrfToken)

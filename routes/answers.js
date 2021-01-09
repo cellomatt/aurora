@@ -49,6 +49,7 @@ router.get(
       where: { answerId: req.params.id },
     });
     return res.render("answer-view", {
+      title: `Answer: ${answer.message}`,
       userId,
       answer,
       comments,

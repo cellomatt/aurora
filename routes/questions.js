@@ -103,11 +103,11 @@ router.post(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
-    let currentUser;
+    let userId;
     if (req.session.auth) {
-      currentUser = req.session.auth.userId;
+      userId = req.session.auth.userId;
     } else {
-      currentUser = 0;
+      userId = 0;
     }
 
     const question = await Question.findByPk(req.params.id, {
@@ -121,7 +121,7 @@ router.get(
       include: User,
     });
     res.render("question-view", {
-      currentUser,
+      userId,
       question,
       answers,
       title: `Question: ${question.title}`,

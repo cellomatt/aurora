@@ -26,7 +26,7 @@ block content
             h2.question_username= question.User.username
       if locals.authenticated
         form(action="/answers" method="post")
-          input(name="userId" type="hidden" value=currentUser)
+          input(name="userId" type="hidden" value=userId)
           input(name="questionId" type="hidden" value=question.id)
           input(name="_csrf" type="hidden" value=csrfToken)
           label(for="message")

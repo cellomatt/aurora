@@ -35,6 +35,12 @@ router.get(
   "/:id",
   csrfProtection,
   asyncHandler(async (req, res, next) => {
+    let userId;
+    if (req.session.auth) {
+      userId = req.session.auth.userId;
+    } else {
+      userId = 0;
+    }
     const answer = await Answer.findByPk(req.params.id, {
       includes: { User, Question, Topic, Expertise, Comment },
     });
@@ -43,6 +49,7 @@ router.get(
       where: { answerId: req.params.id },
     });
     return res.render("answer-view", {
+      userId,
       answer,
       comments,
       question,

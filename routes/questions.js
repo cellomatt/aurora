@@ -120,10 +120,10 @@ router.get(
     })
 );
 
-router.delete(`/:id/delete`, asyncHandler(async (req, res) => {
+router.get(`/:id/delete`, asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id)
     await question.destroy();
-
+    // res.redirect('/');
 }));
 
 

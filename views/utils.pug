@@ -1,12 +1,12 @@
 
 mixin question({ User: { username }, title, userId, message, id,  expertiseId, createdAt })
-    div
+    div(id=`trash-container-${id}`)
      a(href=`/questions/${id}`).question_box
       div.title_container
         h3.question_title= title
         if uId === userId
-          form(method=`POST` action=`/questions/${id}/delete`)
-            button.trash(type="submit" id= `trash${id}`) 🗑️
+          form(id="trash-form")
+            button.trash(id=id) 🗑️
 
       hr.solid
       h2.question_message= message

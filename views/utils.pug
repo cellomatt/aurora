@@ -5,14 +5,10 @@ mixin question({ User: { username }, title, userId, message, id,  expertiseId, c
       div.title_container
         h3.question_title= title
         if uId === userId
-          form(id="trash-form")
+          form
             button.trash(id=id) 🗑️
-
       hr.solid
       h2.question_message= message
-
-        //- - console.log(locals)
-
         div.question_footer
           if expertiseId === 1
             h2.question_expertise__nov

@@ -103,6 +103,9 @@ router.post(
 router.get(
     "/:id",
     asyncHandler(async (req, res) => {
+
+        const userId = req.session.auth.userId;
+     
         const question = await Question.findByPk(req.params.id, {
             include: [User, Topic, Expertise],
         });
@@ -112,9 +115,12 @@ router.get(
                 questionId: req.params.id,
             },
         });
+
+        
         res.render("question-view", {
             question,
             answers,
+            userId,
             title: `Question: ${question.id}`,
         });
     })

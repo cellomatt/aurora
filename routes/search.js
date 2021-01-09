@@ -12,8 +12,6 @@ const { asyncHandler } = require("../utils/utils");
 
 router.post("/", asyncHandler(async (req, res) => {
 
-
-
     const {
         searchTerm
     } = req.body;
@@ -22,12 +20,12 @@ router.post("/", asyncHandler(async (req, res) => {
         where: {
             [Op.or]: [{
                     title: {
-                        [Op.substring]: searchTerm
+                        [Op.iLike]: '%' + searchTerm + '%'
                     }
                 },
                 {
                     message: {
-                        [Op.substring]: searchTerm
+                        [Op.iLike]: '%' + searchTerm + '%'
                     }
                 }
             ]
@@ -68,6 +66,8 @@ router.post("/", asyncHandler(async (req, res) => {
 
 
     res.render('search', {
+        title: `Search: ${searchTerm}`,
+        searchTerm,
         results,
         topics,
         expertises,

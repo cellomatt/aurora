@@ -101,12 +101,12 @@ h1 {
 
 .topic_contents {
   /* background-color: rgba(242, 242, 242, 0.6); */
-  height: 460px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  /* height: 50%; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* position: fixed; */
 }
 
 .topic_contents a {
@@ -782,6 +782,7 @@ textarea {
     display: flex;
     justify-content: flex-end;
     width: 57%;
+}
 
 .view_comments_link:hover {
 

@@ -1,0 +1,20 @@
+.hidden {
+    display: none;
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-left: 400px;
+}
+
+.hidden_content:hover .hidden {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+}

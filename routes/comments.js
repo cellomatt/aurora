@@ -10,15 +10,16 @@ router.post(
   "/",
   // requireAuth,
   asyncHandler(async (req, res, next) => {
-    const { commentMessage, answerId, userId } = req.body;
+    const { commentMessage, answerId } = req.body;
 
     const comment = await Comment.create({
       message: commentMessage,
-      answerId,
-      userId,
+      answerId: answerId,
+      userId: req.session.auth.userId,
     });
 
-    return res.redirect(`/comments/${comment.id}`);
+    // return res.redirect(`/comments/${comment.id}`);
+    res.redirect(`/answers/${answerId}`);
   })
 );
 
@@ -26,10 +27,9 @@ router.get(
   "/:id",
   csrfProtection,
   asyncHandler(async (req, res, next) => {
+    const userId = req.session.auth.userId;
     const commentId = req.params.id;
-    console.log(commentId + "---------");
     const comment = await Comment.findByPk(commentId);
-    console.log(comment);
     const answer = await Answer.findOne({ where: { id: comment.answerId } });
     const comments = await Comment.findAll({ where: { answerId: answer.id } });
     const question = await Question.findByPk(answer.questionId);
@@ -38,9 +38,16 @@ router.get(
       answer,
       comments,
       question,
+      userId,
       csrfToken: req.csrfToken(),
     });
   })
 );
+
+router.get(`/:id/delete`, asyncHandler(async (req, res) => {
+  const comment = await Comment.findByPk(req.params.id)
+  await comment.destroy();
+  // res.redirect('/');
+}));
 
 module.exports = router;

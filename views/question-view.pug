@@ -24,9 +24,16 @@ block content
                 h2.question_expertise__exp
                 h2 Expert
             h2.question_username= question.User.username
+
+      div
+          each answer in answers
+            div(id=`answer-trash-container-${answer.id}`)
+              h2= answer.message
+                if answer.userId === userId
+                  h3(id=answer.id class="answerTrash") 🗑️
+              a(href=`/answers/${answer.id}`) View Comments
       if locals.authenticated
         form(action="/answers" method="post")
-          input(name="userId" type="hidden" value=currentUser)
           input(name="questionId" type="hidden" value=question.id)
           input(name="_csrf" type="hidden" value=csrfToken)
           label(for="message")

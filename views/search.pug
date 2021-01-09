@@ -5,6 +5,7 @@ append head
 
 block content
     if results.length > 0
+        h1 Search: "#{searchTerm}"
         select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
             option(value="" disabled selected hidden) Topic
             option(value="All") All
@@ -25,4 +26,4 @@ block content
                 h3= result.Expertise.description
     else
         div
-            h1 There are no results for this search term. Ask a question <a id="search_result_link" href="/questions/new">here</a>.
+            h1 There are no results for "#{searchTerm}". Ask a question <a id="search_result_link" href="/questions/new">here</a>.

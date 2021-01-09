@@ -1,29 +1,47 @@
 extends layout.pug
 append head
-    link(rel='stylesheet' href='/stylesheets/topics.css')
     script(src="/javascripts/sort.js" type="text/javascript" defer)
 
 block content
+
     if results.length > 0
         h1 Search: "#{searchTerm}"
-        select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
-            option(value="" disabled selected hidden) Topic
-            option(value="All") All
-            each topic in topics
-                option(value=topic.id class="form__dropdown--option")=topic.name
+        div.sort_bar
+            select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
+                option(value="" disabled selected hidden) Topic
+                option(value="All") All
+                each topic in topics
+                    option(value=topic.id class="form__dropdown--option")=topic.name
 
-        select#expertiseSelect(name="expertiseId" class="form__dropdown" onchange="filterText('expertiseSelect')")
-            option(value="" disabled selected hidden) Expertise Level
-            option(value="All") All
-            each expertise in expertises
-                option(value=expertise.description class="form__dropdown--option")=expertise.description
+            select#expertiseSelect(name="expertiseId" class="form__dropdown" onchange="filterText('expertiseSelect')")
+                option(value="" disabled selected hidden) Expertise Level
+                option(value="All") All
+                each expertise in expertises
+                    option(value=expertise.description class="form__dropdown--option")=expertise.description
 
-        each result in results
-            div(class= `${result.Topic.id} ${result.Expertise.description} result`)
-                h1= result.title
-                h2= result.message
-                h3= result.Topic.name
-                h3= result.Expertise.description
+        div.main_content
+                each result in results
+                    a(href=`/questions/${result.dataValues.id}` style="text-decoration:none")
+                        div.question_box(class= `${result.Topic.id} ${result.Expertise.description} result`)
+                            h1.question_title= result.title
+                            hr.solid
+                            h2.search_message= result.message
+                            div.search_footer
+                                if result.Expertise.description === 'Novice'
+                                    div.question_expertise_label
+                                        h2.question_expertise__nov
+                                        h2.question_search_label= result.Expertise.description
+                                if result.Expertise.description === 'Intermediate'
+                                    div.question_expertise_label
+                                        h2.question_expertise__int
+                                        h2.question_search_label= result.Expertise.description
+                                if result.Expertise.description === 'Expert'
+                                    div.question_expertise_label
+                                        h2.question_expertise__exp
+                                        h2.question_search_label= result.Expertise.description
+                                h2.question_search_label= result.Topic.name
+
     else
+
         div
             h1 There are no results for "#{searchTerm}". Ask a question <a id="search_result_link" href="/questions/new">here</a>.

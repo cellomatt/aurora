@@ -5,6 +5,7 @@ append head
 block content
 
     if results.length > 0
+        h1 Search: "#{searchTerm}"
         div.sort_bar
             select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
                 option(value="" disabled selected hidden) Topic
@@ -41,7 +42,6 @@ block content
                                 h2.question_search_label= result.Topic.name
 
     else
-        div
-            h1 There are no results for this search term. Ask a question <a id="search_result_link" href="/questions/new">here</a>.
 
         div
+            h1 There are no results for "#{searchTerm}". Ask a question <a id="search_result_link" href="/questions/new">here</a>.

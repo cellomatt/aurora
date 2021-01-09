@@ -1,4 +1,4 @@
-  body {
+body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -436,6 +436,10 @@ textarea {
   justify-content: center;
 }
 
+.topic_container__link {
+  text-decoration: none;
+}
+
 .topic_headline {
   text-align: center;
   font-size: 3rem;
@@ -671,7 +675,6 @@ textarea {
   font-weight: bolder;
   width: 95%;
   padding: 20px 10px 20px;
-
 }
 
 .answer_footer {
@@ -696,5 +699,4 @@ textarea {
 }
 
 .view_comments_link:hover {
-
 }

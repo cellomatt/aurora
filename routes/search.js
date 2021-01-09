@@ -7,7 +7,6 @@ const {
     Question,
     Expertise,
     Topic,
-    Answer
 } = db;
 const { asyncHandler } = require("../utils/utils");
 

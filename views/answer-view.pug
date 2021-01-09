@@ -4,12 +4,15 @@ block content
   h1= question.title
   h2= answer.message
   each comment in comments
-    h3= comment.message
+    div(id=`comment-trash-container-${comment.id}`)
+      h3= comment.message
+      if comment.userId === userId
+        h3(id=comment.id class="commentTrash") 🗑️
   if locals.authenticated  
     form(action='/comments' method='post')
       input(name="_csrf" type="hidden" value=csrfToken)
       input(name="answerId" type="hidden" value=answer.id)
-      input(name="userId" type="hidden" value=answer.userId)
+      input(name="userId" type="hidden" value=userId)
       label(for="commentMessage")
       textarea(name="commentMessage" placeholder="Respond with comment here" required)
       button(type="submit") Submit

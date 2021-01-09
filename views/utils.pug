@@ -1,28 +1,29 @@
 
-mixin question({ User: { username }, title, message, id,  expertiseId, createdAt })
-    div
-     a(href=`/questions/${id}`).question_box
-      h3.question_title= title
-
-      hr.solid
-      h2.question_message= message
-
-
-        div.question_footer
-          //- h2.question_date= createdAt
-          if expertiseId === 1
-            div.question_expertise_label
-                h2.question_expertise__nov
-                h2 Novice
-          if expertiseId === 2
-            div.question_expertise_label
-                h2.question_expertise__int
-                h2 Intermediate
-          if expertiseId === 3
-            div.question_expertise_label
-                h2.question_expertise__exp
-                h2 Expert
-          h2.question_username= username
+mixin question({ User: { username }, title, userId, message, id,  expertiseId, createdAt })
+    div(id=`trash-container-${id}`)
+      a(href=`/questions/${id}`).question_box
+        div.title_container
+          h3.question_title= title
+          if uId === userId
+            form
+              button.trash(id=id) 🗑️
+        hr.solid
+        h2.question_message= message
+          div.question_footer
+            //- h2.question_date= createdAt
+            if expertiseId === 1
+              div.question_expertise_label
+                  h2.question_expertise__nov
+                  h2 Novice
+            if expertiseId === 2
+              div.question_expertise_label
+                  h2.question_expertise__int
+                  h2 Intermediate
+            if expertiseId === 3
+              div.question_expertise_label
+                  h2.question_expertise__exp
+                  h2 Expert
+            h2.question_username= username
 
           //- if locals.authenticated
           //-   a.question_answer(href=`/questions/${id}`) answer

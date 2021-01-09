@@ -12,12 +12,19 @@ block content
         h2.question_message= question.message
           div.question_footer
             if question.expertiseId === 1
-              h2.question_expertise__nov
+              div.question_expertise_label
+                h2.question_expertise__nov
+                h2 Novice
             if question.expertiseId === 2
-              h2.question_expertise__int
+              div.question_expertise_label
+                h2.question_expertise__int
+                h2 Intermediate
             if question.expertiseId === 3
-              h2.question_expertise__exp
+              div.question_expertise_label
+                h2.question_expertise__exp
+                h2 Expert
             h2.question_username= question.User.username
+
       div
           each answer in answers
             div(id=`answer-trash-container-${answer.id}`)
@@ -27,10 +34,17 @@ block content
               a(href=`/answers/${answer.id}`) View Comments
       if locals.authenticated
         form(action="/answers" method="post")
-          //- input(name="userId" type="hidden" value=question.userId)
           input(name="questionId" type="hidden" value=question.id)
           input(name="_csrf" type="hidden" value=csrfToken)
           label(for="message")
-          textarea(name="message" type="text" class="form__input_field" placeholder="Answer question here" required)
-          button(type="submit") Submit
+          textarea.form__input_field(name="message" type="text" placeholder="Answer question here" required)
+          button.form__submit_button(type="submit") Submit
+      div.answer_box
+          each answer in answers
+            div.answer
+              h2.answer_title= answer.message
+              div.answer_footer
+                a.view_comments_link(href=`/answers/${answer.id}`) View Comments
+                h2.answer_username= answer.User.username
+              hr.solid
     div.main__right_col

@@ -111,26 +111,26 @@ router.get(
         });
 
         const answers = await Answer.findAll({
-            where: {
-                questionId: req.params.id,
-            },
-        });
-
-        
-        res.render("question-view", {
-            question,
-            answers,
-            userId,
-            title: `Question: ${question.id}`,
-        });
-    })
+      where: {
+        questionId: req.params.id,
+      },
+      include: User,
+    });
+    res.render("question-view", {
+      userId,
+      question,
+      answers,
+      title: `Question: ${question.title}`,
+    });
+  })
 );
 
 router.get(`/:id/delete`, asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id)
     await question.destroy();
-    // res.redirect('/');
 }));
 
+
+    
 
 module.exports = router;

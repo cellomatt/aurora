@@ -12,7 +12,12 @@ const {
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll({ include: User });
+    const questions = await Question.findAll({
+        include: User,
+        order: [
+            ['createdAt', 'DESC']
+        ],
+     });
     const topics = await Topic.findAll()
     // const userId = await auth.userId
     const uId = req.session.auth.userId

@@ -51,4 +51,10 @@ router.get(
   })
 );
 
+router.get(`/:id/delete`, asyncHandler(async (req, res) => {
+  const answer = await Answer.findByPk(req.params.id)
+  await answer.destroy();
+  // res.redirect('/');
+}));
+
 module.exports = router;

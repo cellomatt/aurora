@@ -12,6 +12,13 @@ const {
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res) => {
+    let userId;
+    if (req.session.auth) {
+      userId = req.session.auth.userId;
+    } else {
+      userId = 0;
+    }
+
     const questions = await Question.findAll({
         include: User,
         order: [
@@ -22,6 +29,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
     res.render('home', {
         title: 'Home',
+        userId,
         questions,
         topics
     });

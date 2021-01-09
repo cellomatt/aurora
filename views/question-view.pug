@@ -7,7 +7,11 @@ block content
     div.main__left_col
     div.main__center_col
       div.question_box#question_view
-        h3.question_title= question.title
+        div.title_container
+          h3.question_title= question.title
+          if uId === userId
+            form
+              button.trash(id=id) 🗑️
         hr.solid
         h2.question_message= question.message
           div.question_footer
@@ -32,15 +36,17 @@ block content
           label(for="message")
           textarea.form__input_field(name="message" type="text" placeholder="Answer question here" required)
           button.form__submit_button(type="submit") Submit
-      div.answer_box
-        each answer in answers
-          div(id=`answer-trash-container-${answer.id}`)
-            h2.answer_title= answer.message
-              if answer.userId === userId
-                h3(id=answer.id class="answerTrash") 🗑️
-            div.answer_footer
-              a.view_comments_link(href=`/answers/${answer.id}`) View Comments
-              h2.answer_username= answer.User.username
-            hr.solid
-              
+      if answers.length > 0
+        div.answer_box
+          each answer in answers
+            div(id=`answer-trash-container-${answer.id}`)
+              div.title_container
+                h2.answer_title= answer.message
+                  if answer.userId === userId
+                    form
+                      button(id=answer.id class="answerTrash trash") 🗑️
+              div.answer_footer
+                a.view_comments_link(href=`/answers/${answer.id}`) View Comments
+                h2.answer_username= answer.User.username
+              hr.solid    
     div.main__right_col

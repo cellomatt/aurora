@@ -11,9 +11,9 @@ router.post(
   asyncHandler(async (req, res, next) => {
     const { message, questionId, userId } = req.body;
     await Answer.create({
-      message: message,
-      questionId: questionId,
-      userId: req.session.auth.userId,
+      message,
+      questionId,
+      userId,
     });
 
     //const questions = await Question.findAll({ include: User });
@@ -35,7 +35,6 @@ router.get(
   "/:id",
   csrfProtection,
   asyncHandler(async (req, res, next) => {
-    const userId = req.session.auth.userId;
     const answer = await Answer.findByPk(req.params.id, {
       includes: { User, Question, Topic, Expertise, Comment },
     });
@@ -47,16 +46,9 @@ router.get(
       answer,
       comments,
       question,
-      userId,
       csrfToken: req.csrfToken(),
     });
   })
 );
-
-router.get(`/:id/delete`, asyncHandler(async (req, res) => {
-  const answer = await Answer.findByPk(req.params.id)
-  await answer.destroy();
-  // res.redirect('/');
-}));
 
 module.exports = router;

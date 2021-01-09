@@ -1,4 +1,4 @@
-  body {
+body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -82,6 +82,7 @@ h1 {
   width: 250px;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 .topic_title {
@@ -671,7 +672,6 @@ textarea {
   font-weight: bolder;
   width: 95%;
   padding: 20px 10px 20px;
-
 }
 
 .answer_footer {
@@ -696,5 +696,4 @@ textarea {
 }
 
 .view_comments_link:hover {
-
 }

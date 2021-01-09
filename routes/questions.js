@@ -55,7 +55,7 @@ router.get(
     const expertises = await Expertise.findAll();
 
     res.render("question-ask", {
-      title: "Ask a Question",
+      title: "Add a Question",
       topics,
       expertises,
       csrfToken: req.csrfToken(),

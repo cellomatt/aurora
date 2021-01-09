@@ -18,29 +18,39 @@ router.post(
       userId,
     });
 
-    return res.redirect(`/comments/${comment.id}`);
+    return res.redirect(`/answers/${answerId}`);
   })
 );
 
-router.get(
-  "/:id",
-  csrfProtection,
-  asyncHandler(async (req, res, next) => {
-    const commentId = req.params.id;
-    console.log(commentId + "---------");
-    const comment = await Comment.findByPk(commentId);
-    console.log(comment);
-    const answer = await Answer.findOne({ where: { id: comment.answerId } });
-    const comments = await Comment.findAll({ where: { answerId: answer.id } });
-    const question = await Question.findByPk(answer.questionId);
+// router.get(
+//   "/:id",
+//   csrfProtection,
+//   asyncHandler(async (req, res, next) => {
+//     let userId;
+//     if (req.session.auth) {
+//       userId = req.session.auth.userId;
+//     } else {
+//       userId = 0;
+//     }
+//     const commentId = req.params.id;
+//     const comment = await Comment.findByPk(commentId);
+//     const answer = await Answer.findOne({ where: { id: comment.answerId } });
+//     const comments = await Comment.findAll({ where: { answerId: answer.id } });
+//     const question = await Question.findByPk(answer.questionId);
 
-    return res.render("answer-view", {
-      answer,
-      comments,
-      question,
-      csrfToken: req.csrfToken(),
-    });
-  })
-);
+//     return res.render("answer-view", {
+//       answer,
+//       comments,
+//       question,
+//       userId,
+//       csrfToken: req.csrfToken(),
+//     });
+//   })
+// );
+
+router.get(`/:id/delete`, asyncHandler(async (req, res) => {
+  const comment = await Comment.findByPk(req.params.id)
+  await comment.destroy();
+}));
 
 module.exports = router;

@@ -321,7 +321,7 @@ textarea {
     justify-content: space-around;
     position: sticky;
     top: 0;
-    z-index: 100px;
+    z-index: 100;
 }
 
 .topnav a {
@@ -353,7 +353,7 @@ textarea {
     text-decoration: none;
     position: sticky;
     top: 0;
-    z-index: 100px;
+    z-index: 100;
 }
 
 .flex-containter {
@@ -548,13 +548,15 @@ textarea {
 }
 
 .question_title {
+    position: relative;
     font-size: 29px;
     font-weight: bolder;
     width: 95%;
     padding-left: 10px;
     padding-top: 10px;
     color: #333;
-}
+    z-index: 99;
+  }
 
 .question_message {
     padding-top: 6px;
@@ -787,3 +789,42 @@ textarea {
 .view_comments_link:hover {
 
 }
+
+.question_box:hover .trash {
+    display: flex;
+    -webkit-animation: fadein 0.5s;
+    align-items: flex-end;
+
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+.trash {
+    font-size: 18px;
+    width: 35px;
+    height: 30px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border: none;
+    /* margin-top: 10px; */
+    display: none;
+    transition: 2s;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+  }
+
+  .title_container {
+    position: relative;
+    z-index: 98;
+    display: flex;
+    align-items: center;
+  }

@@ -256,6 +256,7 @@ h1 {
     font-size: 14px;
 }
 
+
 .form__dropdown--option {
     background-color: white;
     color: black;
@@ -729,4 +730,10 @@ textarea {
     padding-left: 10px;
     color: rgb(34, 34, 34);
     min-height: 50px;
+}
+
+.sort_bar {
+    display: flex;
+    justify-content: flex-end;
+    width: 57%;
 }

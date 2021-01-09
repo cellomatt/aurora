@@ -5,17 +5,18 @@ append head
 block content
 
     if results.length > 0
-        select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
-            option(value="" disabled selected hidden) Topic
-            option(value="All") All
-            each topic in topics
-                option(value=topic.id class="form__dropdown--option")=topic.name
+        div.sort_bar
+            select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
+                option(value="" disabled selected hidden) Topic
+                option(value="All") All
+                each topic in topics
+                    option(value=topic.id class="form__dropdown--option")=topic.name
 
-        select#expertiseSelect(name="expertiseId" class="form__dropdown" onchange="filterText('expertiseSelect')")
-            option(value="" disabled selected hidden) Expertise Level
-            option(value="All") All
-            each expertise in expertises
-                option(value=expertise.description class="form__dropdown--option")=expertise.description
+            select#expertiseSelect(name="expertiseId" class="form__dropdown" onchange="filterText('expertiseSelect')")
+                option(value="" disabled selected hidden) Expertise Level
+                option(value="All") All
+                each expertise in expertises
+                    option(value=expertise.description class="form__dropdown--option")=expertise.description
 
         div.main_content
                 each result in results

@@ -10,8 +10,10 @@ block content
     div.parent
         div.topic_container
             each topic in topics
-                div.content_box
-                        img.thumbnail(src=`../images/topic_thumbnail/${topic.id}.png`)
-                        div.content_box__contents
-                            a.content_box__text(href=`/topics/${topic.id}`)= topic.name
+                div
+                    a.topic_container__link(href=`/topics/${topic.id}`)
+                        div.content_box
+                            img.thumbnail(src=`../images/topic_thumbnail/${topic.id}.png`)
+                            div.content_box__contents
+                                h1.content_box__text= topic.name
     p.attribution_link Icons made by Freepik from #[a(href="https://www.flaticon.com/") www.flaticon.com]

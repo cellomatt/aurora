@@ -7,13 +7,12 @@ const {
     Question,
     Expertise,
     Topic,
-    Answer
 } = db;
 const { asyncHandler } = require("../utils/utils");
 
 router.post("/", asyncHandler(async (req, res) => {
 
-    
+
 
     const {
         searchTerm
@@ -66,7 +65,7 @@ router.post("/", asyncHandler(async (req, res) => {
         }
     }})
 
-    
+
 
     res.render('search', {
         results,

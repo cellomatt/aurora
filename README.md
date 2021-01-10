@@ -21,12 +21,17 @@ intermediate and expert levels of difficulty.
 </p>
 ^^^ Where our website homepage screenshot will go 
 
-<h2>Try the site live: <a href="www.google.com">Here</a> <b>|</b> Check out our <a href="https://github.com/cellomatt/aurora/wiki">documentation</a></h2>
+<h2>Try the site live: <a href=http://aurora-quora.herokuapp.com/>Here</a> <b>|</b> Check out our <a href="https://github.com/cellomatt/aurora/wiki">documentation</a></h2>
 
 ## How to run the site locally
-> This is how to run the site locally 
->
->
+
+- Clone the repo
+- Use the command ```npm install``` to install all dependencies
+- Make a copy of the .env.example file and edit to match local db configuration
+- Create the database and user in psql
+  * Run all migrations with ```npx dotenv sequelize db:migrate```
+  * Seed all data with ```npx dotenv sequelize db:seed:all```
+- Use the start script ```npm start``` to run the server
 
 This piece of code is the basis of it all...
 ```
@@ -88,51 +93,93 @@ beautifully display html on our pages.
 **Heroku** is the web hosting app of our choice that allowed us to 
 run our app on the cloud! 
 
-**Honarable Mentions** are the developement tools that made life 
+**Honorable Mentions** are the developement tools that made life 
 much more enjoyable! 
 * Postman, made route testing very easy and fun!
 * Postbird, its wonderful GUI made all the difference!
 
 
 ## Features that we implemented
-Our team implemented many features throughout our fullstack app, these
-are two in particular that ...
+The first big feature we tackled is the searching algorithm,
+which populates the page with results containing either a question's
+title or its message. 
 ```
-The big thing in our code that we implemented
+ const {
+        searchTerm
+    } = req.body;
+
+
+const results = await Question.findAll({
+       
+       where: {
+            [Op.or]: [{
+                    title: {
+                        [Op.iLike]: '%' + searchTerm + '%'
+                    }
+                },
+                {
+                    message: {
+                        [Op.iLike]: '%' + searchTerm + '%'
+                    }
+                }
+            ]
+        },
+        include:
+             [Topic, Expertise, User]
+        ,
+        order: [
+            ['createdAt', 'DESC']
+        ]
+
+    })
 ```
 <details><summary><b>How it was done</b></summary>
 
-1. We started by:
+1. We started by extracting the search term from the POST request.
 
     ```
-    this can be our sample code
-    
-    
+    const {
+        searchTerm
+    } = req.body;
     ```
-2. Then we did this:
+2. Then we queried the database for questions where either the question title 
+  or the question message (case insensitive) matched the search term. 
 
+  
+```
+const results = await Question.findAll({
+        where: {
+            [Op.or]: [{
+                    title: {
+                        [Op.iLike]: '%' + searchTerm + '%'
+                    }
+                },
+                {
+                    message: {
+                        [Op.iLike]: '%' + searchTerm + '%'
+                    }
+                }
+            ]
+        },
+
+    })
+````
+    
+3. We included each question's topic, expertise level, and user, and 
+  ordered the results so that the most recent question appears first. 
+
+    ```
+    include:
+             [Topic, Expertise, User]
+        ,
+        order: [
+            ['createdAt', 'DESC']
+        ]
     ```    
-    this can be our sample code
-    ```
-    
-    
-3. Which led us to this:
-
-    ```
-    this can be our sample code
-    
-    
-    ```    
-4. And we finally figured out this...
-
-  ```
-  this can be our sample code
-
-  ```
 
 </details>
 
-While this other feature...
+Sorting...
 
 ```
 The big thing in our code that we implemented

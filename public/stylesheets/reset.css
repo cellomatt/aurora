@@ -264,6 +264,7 @@ h1 {
     background-color: #f2f2f2;
     padding: 20px;
     margin: 75px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 .form__title {
@@ -803,30 +804,35 @@ textarea {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
+    background-color: transparent;
 }
 
 #question_view:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
+    background-color: transparent;
 }
 
 .answer_box:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
+    background-color: transparent;
 }
 
 .answer_container:hover .commentTrash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
+    background-color: transparent;
 }
 
 .comment_box:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
+    background-color: transparent;
 }
 
 @keyframes fadein {
@@ -879,6 +885,7 @@ textarea {
 .comment_container:hover .commentTrash {
     display: flex;
     -webkit-animation: fadein 0.5s;
+    background-color: transparent;
 }
 
 .comment_title {

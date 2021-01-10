@@ -37,14 +37,14 @@ block content
           textarea.form__input_field(name="message" type="text" placeholder="Answer question here" required)
           button.form__submit_button(type="submit") Submit
       if answers.length > 0
-        div.answer_box
+        div.answer_container
           each answer in answers
-            div(id=`answer-trash-container-${answer.id}`)
+            div.answer_box(id=`answer-trash-container-${answer.id}`)
               div.title_container
                 h2.answer_title= answer.message
-                  if answer.userId === userId
-                    form
-                      button(id=answer.id class="answerTrash trash") 🗑️
+                if answer.userId === userId
+                  form
+                    button(id=answer.id class="answerTrash trash") 🗑️
               div.answer_footer
                 a.view_comments_link(href=`/answers/${answer.id}`) View Comments
                 h2.answer_username= answer.User.username

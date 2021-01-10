@@ -82,36 +82,36 @@ much more enjoyable!
 The first big feature we tackled is the searching algorithm,
 which populates the page with results containing either a question's
 title or its message. 
-```
- const {
-        searchTerm
-    } = req.body;
+    ```
+    const {
+           searchTerm
+       } = req.body;
 
 
-const results = await Question.findAll({
-       
-       where: {
-            [Op.or]: [{
-                    title: {
-                        [Op.iLike]: '%' + searchTerm + '%'
-                    }
-                },
-                {
-                    message: {
-                        [Op.iLike]: '%' + searchTerm + '%'
-                    }
-                }
-            ]
-        },
-        include:
-             [Topic, Expertise, User]
-        ,
-        order: [
-            ['createdAt', 'DESC']
-        ]
+    const results = await Question.findAll({
 
-    })
-```
+          where: {
+               [Op.or]: [{
+                       title: {
+                           [Op.iLike]: '%' + searchTerm + '%'
+                       }
+                   },
+                   {
+                       message: {
+                           [Op.iLike]: '%' + searchTerm + '%'
+                       }
+                   }
+               ]
+           },
+           include:
+                [Topic, Expertise, User]
+           ,
+           order: [
+               ['createdAt', 'DESC']
+           ]
+
+       })
+    ```
 <details><summary><b>How it was done</b></summary>
 
 1. We started by extracting the search term from the POST request.
@@ -122,27 +122,26 @@ const results = await Question.findAll({
     } = req.body;
     ```
 2. Then we queried the database for questions where either the question title 
-  or the question message (case insensitive) matched the search term. 
-
+  or the question message (case insensitive) matched the search term.
   
-```
-const results = await Question.findAll({
-        where: {
-            [Op.or]: [{
-                    title: {
-                        [Op.iLike]: '%' + searchTerm + '%'
+    ```
+    const results = await Question.findAll({
+            where: {
+                [Op.or]: [{
+                        title: {
+                            [Op.iLike]: '%' + searchTerm + '%'
+                        }
+                    },
+                    {
+                        message: {
+                            [Op.iLike]: '%' + searchTerm + '%'
+                        }
                     }
-                },
-                {
-                    message: {
-                        [Op.iLike]: '%' + searchTerm + '%'
-                    }
-                }
-            ]
-        },
+                ]
+            },
 
-    })
-````
+        })
+    ```
     
 3. We included each question's topic, expertise level, and user, and 
   ordered the results so that the most recent question appears first. 
@@ -160,62 +159,62 @@ const results = await Question.findAll({
 
 The other big feature that we implemented was a sorting algorithm on our search results.
 
-```
-document.addEventListener('DOMContentLoaded', ev => {
-    localStorage.clear();
-})
+    ```
+    document.addEventListener('DOMContentLoaded', ev => {
+        localStorage.clear();
+    })
 
-const filterText = id => {
+    const filterText = id => {
 
-    let select = document.getElementById(id);
-    let option = select.value;
+        let select = document.getElementById(id);
+        let option = select.value;
 
-    if (id === 'expertiseSelect') {
-        localStorage.setItem('expertiseSort', option);
-    } else {
-        localStorage.setItem('topicSort', option);
-    }
+        if (id === 'expertiseSelect') {
+            localStorage.setItem('expertiseSort', option);
+        } else {
+            localStorage.setItem('topicSort', option);
+        }
 
-    let localTopic = localStorage.getItem('topicSort');
-    let localExpertise = localStorage.getItem('expertiseSort');
+        let localTopic = localStorage.getItem('topicSort');
+        let localExpertise = localStorage.getItem('expertiseSort');
 
-    if (!localTopic) localStorage.setItem('topicSort', 'All');
-    if (!localExpertise) localStorage.setItem('expertiseSort', 'All');
+        if (!localTopic) localStorage.setItem('topicSort', 'All');
+        if (!localExpertise) localStorage.setItem('expertiseSort', 'All');
 
-    localTopic = localStorage.getItem('topicSort');
-    localExpertise = localStorage.getItem('expertiseSort');
+        localTopic = localStorage.getItem('topicSort');
+        localExpertise = localStorage.getItem('expertiseSort');
 
-    let divs = document.querySelectorAll(".result");
+        let divs = document.querySelectorAll(".result");
 
-    divs.forEach((div) => {
-        displayCombinator(localTopic, localExpertise, div);
-    });
-};
+        divs.forEach((div) => {
+            displayCombinator(localTopic, localExpertise, div);
+        });
+    };
 
-function displayCombinator(topic, expertise, div) {
-    if (topic === 'All' && expertise === 'All') {
-        div.style.display = 'flex';
-    } else {
-        if (topic === 'All' && expertise !== 'All') {
-            if (div.classList.contains(expertise)) {
-                div.style.display = "flex";
-            } else {
-                div.style.display = "none";
-            }
-        } else if (expertise === 'All' && topic !== 'All') {
-            if (div.classList.contains(topic)) {
-                div.style.display = "flex";
-            } else {
-                div.style.display = "none";
-            }
-        } else if (div.classList.contains(topic) && div.classList.contains(expertise)) {
+    function displayCombinator(topic, expertise, div) {
+        if (topic === 'All' && expertise === 'All') {
             div.style.display = 'flex';
         } else {
-            div.style.display = 'none';
+            if (topic === 'All' && expertise !== 'All') {
+                if (div.classList.contains(expertise)) {
+                    div.style.display = "flex";
+                } else {
+                    div.style.display = "none";
+                }
+            } else if (expertise === 'All' && topic !== 'All') {
+                if (div.classList.contains(topic)) {
+                    div.style.display = "flex";
+                } else {
+                    div.style.display = "none";
+                }
+            } else if (div.classList.contains(topic) && div.classList.contains(expertise)) {
+                div.style.display = 'flex';
+            } else {
+                div.style.display = 'none';
+            }
         }
     }
-}
-```
+    ```
 <details><summary><b>How it was done</b></summary>
 
 1. We started by populating the dropdown menus for Topic and Expertise Level on the 
@@ -258,7 +257,7 @@ in order to make space for our sorting function variables:
     
 3. We rendered the dropdown select menus with the content from our query in step 1, 
 then set up an event listener to save the selected value to local storage:
-```
+    ```
     div.sort_bar
       select#topicSelect(name="topicId" class="form__dropdown" onchange="filterText('topicSelect')")
         option(value="" disabled selected hidden) Topic
@@ -271,9 +270,9 @@ then set up an event listener to save the selected value to local storage:
         option(value="All") All
         each expertise in expertises
           option(value=expertise.description class="form__dropdown--option")=expertise.description
-```
+    ```
     
-```
+    ```
     const filterText = id => {
 
       let select = document.getElementById(id);
@@ -294,42 +293,42 @@ then set up an event listener to save the selected value to local storage:
       localTopic = localStorage.getItem('topicSort');
       localExpertise = localStorage.getItem('expertiseSort');
     };
-```
+    ```
       
 4. We called a helper function on each of our result divs to filter results
 based on the variables in local storage and render them dynamically:
 
-  ```
-  let divs = document.querySelectorAll(".result");
+    ```
+    let divs = document.querySelectorAll(".result");
 
-    divs.forEach((div) => {
-        displayCombinator(localTopic, localExpertise, div);
-  ```
-  ```
-  function displayCombinator(topic, expertise, div) {
-    if (topic === 'All' && expertise === 'All') {
-        div.style.display = 'flex';
-    } else {
-        if (topic === 'All' && expertise !== 'All') {
-            if (div.classList.contains(expertise)) {
-                div.style.display = "flex";
-            } else {
-                div.style.display = "none";
-            }
-        } else if (expertise === 'All' && topic !== 'All') {
-            if (div.classList.contains(topic)) {
-                div.style.display = "flex";
-            } else {
-                div.style.display = "none";
-            }
-        } else if (div.classList.contains(topic) && div.classList.contains(expertise)) {
-            div.style.display = 'flex';
-        } else {
-            div.style.display = 'none';
-        }
+      divs.forEach((div) => {
+          displayCombinator(localTopic, localExpertise, div);
+    ```
+    ```
+    function displayCombinator(topic, expertise, div) {
+      if (topic === 'All' && expertise === 'All') {
+          div.style.display = 'flex';
+      } else {
+          if (topic === 'All' && expertise !== 'All') {
+              if (div.classList.contains(expertise)) {
+                  div.style.display = "flex";
+              } else {
+                  div.style.display = "none";
+              }
+          } else if (expertise === 'All' && topic !== 'All') {
+              if (div.classList.contains(topic)) {
+                  div.style.display = "flex";
+              } else {
+                  div.style.display = "none";
+              }
+          } else if (div.classList.contains(topic) && div.classList.contains(expertise)) {
+              div.style.display = 'flex';
+          } else {
+              div.style.display = 'none';
+          }
+      }
     }
-  }
-  ```
+    ```
 </details>
 
 ## Challenges throughout the development process

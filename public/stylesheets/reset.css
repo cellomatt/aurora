@@ -658,6 +658,12 @@ textarea {
     font-weight: bold;
 }
 
+.search_headline {
+    text-align: center;
+    font-size: 3rem;
+    padding: 20px;
+}
+
 .answer_box {
     color: #333;
     margin: 10px 0;
@@ -780,10 +786,13 @@ textarea {
     min-height: 50px;
 }
 
+#search_no_result {
+    text-align: left;
+}
+
 .sort_bar {
     display: flex;
-    justify-content: flex-end;
-    width: 57%;
+    justify-content: center;
 }
 
 .view_comments_link:hover {

@@ -7,8 +7,7 @@ module.exports = {
       [
         {
           title: "What is the hottest new technology?",
-          message:
-            "I am doing a research project for school and looking for the hottest new technology.",
+          message: "I am doing a research project for school and looking for the hottest new technology.",
           expertiseId: 1,
           topicId: 1,
           userId: 14,
@@ -80,7 +79,7 @@ module.exports = {
         },
         {
           title: "How do I calculate ROI for the money I spent on advertising?",
-          message: "I'm trying to learn how to solve these problems for my math class, but I need a detailed explanation.",
+          message: "I want to make sure that I'm spending my money on the things that will help my business the most.",
           expertiseId: 3,
           topicId: 4,
           userId: 22,

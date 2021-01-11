@@ -16,11 +16,7 @@ block content
                             a(href=`/topics/${topic.id}`).topic_list
                                 img.topic_thumbnail(src=`../images/topic_thumbnail/${topic.id}.png`)
                                 p.topic_text= topic.name
-                            //- img(href=`/topics/${topic.id}`).topic_list= topic.name
-
-
         div.main__center_col
-
             each question in questions
                 +question(question)
         div.main__right_col

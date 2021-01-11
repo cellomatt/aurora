@@ -96,13 +96,10 @@ h1 {
 }
 
 .topic_contents {
-    /* background-color: rgba(242, 242, 242, 0.6); */
-    /* height: 50%; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* position: fixed; */
 }
 
 .topic_contents a {
@@ -283,7 +280,6 @@ h1 {
 }
 
 .form__dropdown {
-    /* box-sizing: border-box; */
     margin: 5px 10px 15px 0px;
     background-color: #c12f2f;
     color: white;
@@ -451,7 +447,6 @@ textarea {
     padding: 20px;
     margin: 20px;
     display: inline-flex;
-    /* border: 4px solid rgb(80, 80, 80); */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
@@ -515,7 +510,6 @@ textarea {
 .title {
     color: #333;
     font-size: 40px;
-    /* font-family: "Roboto Slab", serif; */
 }
 
 .question_box {
@@ -567,7 +561,6 @@ textarea {
     height: 75%;
     width: 64px;
     overflow: hidden;
-    /* border: 1px solid #f00; */
     text-overflow: none;
     white-space: nowrap;
 }
@@ -582,7 +575,6 @@ textarea {
     margin-top: 5px;
     padding-top: 16px;
     height: 75%;
-    /* width: 64px; */
     text-align: right;
     width: 300px;
 }
@@ -664,7 +656,6 @@ textarea {
     padding: 10px;
     width: 100%;
     overflow-wrap: break-word;
-    /* border-radius: 5px; */
     background-color: rgb(242, 242, 242);
     display: flex;
     flex-direction: column;
@@ -701,7 +692,6 @@ textarea {
     font-weight: 300;
     text-transform: uppercase;
     height: 75%;
-    /* width: 64px; */
     text-align: right;
 }
 
@@ -852,7 +842,6 @@ textarea {
     align-self: flex-end;
     justify-self: flex-end;
     border: none;
-    /* margin-top: 10px; */
     display: none;
     transition: 2s;
     cursor: pointer;
@@ -875,7 +864,6 @@ textarea {
     padding: 10px;
     width: 100%;
     overflow-wrap: break-word;
-    /* border-radius: 5px; */
     background-color: rgb(242, 242, 242);
     display: flex;
     flex-direction: column;

@@ -3,12 +3,11 @@ const router = express.Router();
 const db = require("../db/models");
 const { Comment } = db;
 
-const { asyncHandler, csrfProtection } = require("../utils/utils");
+const { asyncHandler } = require("../utils/utils");
 const { requireAuth } = require("../utils/auth");
 
 router.post(
   "/",
-  csrfProtection,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { commentMessage, answerId, userId } = req.body;

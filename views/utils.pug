@@ -10,7 +10,6 @@ mixin question({ User: { username }, title, userId, message, id,  expertiseId, c
         hr.solid
         h2.question_message= message
           div.question_footer
-            //- h2.question_date= createdAt
             if expertiseId === 1
               div.question_expertise_label
                   h2.question_expertise__nov
@@ -24,9 +23,6 @@ mixin question({ User: { username }, title, userId, message, id,  expertiseId, c
                   h2.question_expertise__exp
                   h2 Expert
             h2.question_username= username
-
-          //- if locals.authenticated
-          //-   a.question_answer(href=`/questions/${id}`) answer
 
 mixin validationErrorSummary(errors)
   if errors

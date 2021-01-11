@@ -9,7 +9,4 @@ block content
             h1.topic_headline=topic.name
             each question in questions
                 +question(question)
-        div.main__right_col            
-//- div
-//-     a(href=`/questions/${question.id}`)
-        p=question.title
+        div.main__right_col

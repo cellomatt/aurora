@@ -14,7 +14,7 @@ block content
             input(name="answerId" type="hidden" value=answer.id)
             input(name="userId" type="hidden" value=userId)
             label(for="commentMessage")
-            textarea.form__input_field(name="commentMessage" placeholder="Respond with comment here" required)
+            textarea.form__input_field(name="commentMessage" placeholder="Respond with comment here." required)
             button.form__submit_button(type="submit") Submit
       div
         each comment in comments

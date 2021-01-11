@@ -8,7 +8,6 @@ const {
 } = db;
 const {
   asyncHandler,
-  handleValidationErrors
 } = require("../utils/utils");
 
 
@@ -59,7 +58,7 @@ const formValidators = [
   check("confirmPassword")
   .exists({ checkFalsy: true })
   .withMessage("Please provide a value for confirmed password")
-  .custom((value, { req }) => { 
+  .custom((value, { req }) => {
     if(value !== req.body.password) {
       throw new Error("Confirmed password does not match password.");
     }
@@ -67,7 +66,6 @@ const formValidators = [
   })
 ];
 
-/* GET sign-up form. */
 router.get("/", csrfProtection, function (req, res, next) {
   res.render("signup", {
     title: "Sign Up",
@@ -89,7 +87,7 @@ router.post(
         email,
         password
       } = req.body;
-      // check if user already exists in db
+
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = await User.create({
         username,

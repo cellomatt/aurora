@@ -6,16 +6,14 @@ const {
     check,
     validationResult
 } = require("express-validator");
-const {
-    loginUser
-} = require("../utils/auth");
+const { loginUser } = require("../utils/auth");
 const {
     csrfProtection,
     asyncHandler
 } = require("../utils/utils");
 const db = require("../db/models");
 
-/* GET login form. */
+
 router.get("/", csrfProtection, (req, res) => {
     res.render("login", {
         title: "Log In",
@@ -99,7 +97,6 @@ router.post(
                 username: "demo_user"
             }
         });
-        console.log(user)
 
         loginUser(req, res, user);
         return req.session.save(err => {

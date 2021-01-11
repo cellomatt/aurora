@@ -34,7 +34,7 @@ block content
           input(name="questionId" type="hidden" value=question.id)
           input(name="_csrf" type="hidden" value=csrfToken)
           label(for="message")
-          textarea.form__input_field(name="message" type="text" placeholder="Answer question here" required)
+          textarea.form__input_field(name="message" type="text" placeholder="Answer question here." required)
           button.form__submit_button(type="submit") Submit
       if answers.length > 0
         div.answer_container

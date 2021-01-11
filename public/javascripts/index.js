@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded", (event) => {
     const questionTrash = document.querySelectorAll('.trash')
     questionTrash.forEach((can) => {
-        console.log("======== adding ev listener for questionTrash")
         can.addEventListener('click', async (event) => {
             event.preventDefault();
             let id = event.target.id;
@@ -13,7 +12,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const answerTrash = document.querySelectorAll('.answerTrash');
     answerTrash.forEach((can) => {
-        console.log("======== adding ev listener for answerTrash")
         can.addEventListener('click', async (event) => {
             let id = event.target.id;
             let container = document.getElementById(`answer-trash-container-${id}`);
@@ -24,7 +22,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const commentTrash = document.querySelectorAll('.commentTrash');
     commentTrash.forEach((can) => {
-        console.log("======== adding ev listener for commentTrash")
         can.addEventListener('click', async (event) => {
             let id = event.target.id;
             let container = document.getElementById(`comment-trash-container-${id}`);

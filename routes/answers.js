@@ -7,7 +7,7 @@ const { requireAuth } = require("../utils/auth");
 
 router.post(
     "/",
-    // requireAuth,
+    requireAuth,
     asyncHandler(async (req, res, next) => {
         const { message, questionId, userId } = req.body;
         await Answer.create({
@@ -16,7 +16,6 @@ router.post(
             userId,
         });
 
-        //const questions = await Question.findAll({ include: User });
         const question = await Question.findByPk(req.params.questionId, {
             includes: {
                 User,
@@ -30,7 +29,6 @@ router.post(
     })
 );
 
-// possibly need route to pull single answer
 router.get(
     "/:id",
     csrfProtection,
@@ -64,4 +62,5 @@ router.get(`/:id/delete`, asyncHandler(async (req, res) => {
     const answer = await Answer.findByPk(req.params.id)
     await answer.destroy();
 }));
+
 module.exports = router;

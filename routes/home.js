@@ -10,7 +10,6 @@ const {
     asyncHandler
 } = require('../utils/utils');
 
-/* GET home page. */
 router.get('/', asyncHandler(async (req, res) => {
     let uId;
     if (req.session.auth) {

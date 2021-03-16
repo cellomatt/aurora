@@ -48,7 +48,7 @@ h1 {
 }
 
 .small_hyperlink {
-    text-align: right;
+    text-align: center;
     margin-top: 25px;
 }
 
@@ -181,7 +181,8 @@ textarea {
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
-    max-height: 40px;
+    height: 40px;
+    width: 40px;
     margin-top: 10px;
 }
 

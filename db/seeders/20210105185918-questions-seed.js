@@ -429,7 +429,7 @@ module.exports = {
           userId: Math.floor(Math.random()*50),
           createdAt: new Date(),
           updatedAt: new Date(),
-        }
+        },
       ],
       {}
     );

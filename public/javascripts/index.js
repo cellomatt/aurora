@@ -6,7 +6,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
             let id = event.target.id;
             let container = document.getElementById(`trash-container-${id}`);
             container.innerHTML = '';
-            await fetch(`/questions/${id}/delete`);
+            const res = await fetch(`/questions/${id}/delete`);
+            console.log("here ----->", res)
+            if (res) {
+                window.location.replace("/");
+            }
         })
     })
 

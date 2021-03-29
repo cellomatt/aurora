@@ -6,12 +6,12 @@ block content
   div.main
     div.main__left_col
     div.main__center_col
-      div.question_box#question_view
+      div(id=`trash-container-${question.id}`).question_box.question_view 
         div.title_container
           h3.question_title= question.title
-          if uId === userId
+          if question.userId === userId
             form
-              button.trash(id=id) 🗑️
+              button.trash(id=question.id) 🗑️
         hr.solid
         h2.question_message= question.message
           div.question_footer

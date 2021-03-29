@@ -7,9 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
             let container = document.getElementById(`trash-container-${id}`);
             // container.innerHTML = '';
             container.remove();
-            const res = await fetch(`/questions/${id}/delete`);
-            console.log("here ----->", res)
-            if (res) {
+            const deleted = await fetch(`/questions/${id}/delete`);
+            if (deleted.ok) {
                 window.location.replace("/");
             }
         })

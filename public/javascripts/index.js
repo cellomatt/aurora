@@ -1,11 +1,12 @@
-window.addEventListener("DOMContentLoaded", (event) => {
-    const questionTrash = document.querySelectorAll('.trash')
+window.addEventListener("DOMContentLoaded", () => {
+    const questionTrash = document.querySelectorAll('.questionTrash')
     questionTrash.forEach((can) => {
         can.addEventListener('click', async (event) => {
             event.preventDefault();
             let id = event.target.id;
             let container = document.getElementById(`trash-container-${id}`);
-            container.innerHTML = '';
+            // container.innerHTML = '';
+            container.remove();
             const res = await fetch(`/questions/${id}/delete`);
             console.log("here ----->", res)
             if (res) {
@@ -19,7 +20,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         can.addEventListener('click', async (event) => {
             let id = event.target.id;
             let container = document.getElementById(`answer-trash-container-${id}`);
-            container.innerHTML = '';
+            // container.innerHTML = '';
+            container.remove();
             await fetch(`/answers/${id}/delete`);
         })
     })
@@ -29,7 +31,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         can.addEventListener('click', async (event) => {
             let id = event.target.id;
             let container = document.getElementById(`comment-trash-container-${id}`);
-            container.innerHTML = '';
+            // container.innerHTML = '';
+            container.remove();
             await fetch(`/comments/${id}/delete`);
         })
     })

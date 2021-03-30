@@ -883,3 +883,32 @@ textarea {
     width: 95%;
     padding-top: 10px;
 }
+
+.footer {
+    height: 70px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    bottom: 0;
+}
+
+.footer_about_dev {
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60px;
+    text-align: center;
+}
+
+.footer_linkedin {
+    height: 50px;
+}
+
+.footer_dev_image {
+    margin-right: 5px;
+    margin-bottom: 1.5px;
+    height: 47px;
+    border-radius: 4px;
+}

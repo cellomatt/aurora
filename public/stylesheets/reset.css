@@ -903,20 +903,19 @@ textarea {
 }
 
 .footer_linkedin {
-    display: flex;
-    align-content: center;
+    margin: auto;
     height: 50px;
+    padding-top: 7px;
 }
 
 .footer_dev_image {
-    margin: auto;
     margin-right: 5px;
-    height: 47px;
+    height: 42px;
     border-radius: 4px;
 }
 
 .footer_icons {
-    display: flex;
+
 }
 
 .footer_text {

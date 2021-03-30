@@ -894,7 +894,7 @@ textarea {
 }
 
 .footer_about_dev {
-    margin-top: 7px;
+    margin: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -903,12 +903,24 @@ textarea {
 }
 
 .footer_linkedin {
+    display: flex;
+    align-content: center;
     height: 50px;
 }
 
 .footer_dev_image {
+    margin: auto;
     margin-right: 5px;
-    margin-bottom: 1.5px;
     height: 47px;
     border-radius: 4px;
+}
+
+.footer_icons {
+    display: flex;
+}
+
+.footer_text {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
 }

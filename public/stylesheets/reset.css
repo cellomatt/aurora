@@ -626,7 +626,7 @@ textarea {
     float: left;
 }
 
-#question_view:hover {
+.question_view:hover {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -790,40 +790,40 @@ textarea {
     color: rgb(175, 175, 175);
 }
 
-.question_box:hover .trash {
+/* .question_box:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
     background-color: transparent;
-}
+} */
 
-#question_view:hover .trash {
+/* .question_view:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
     background-color: transparent;
-}
+} */
 
-.answer_box:hover .trash {
+/* .answer_box:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
     background-color: transparent;
-}
+} */
 
-.answer_container:hover .commentTrash {
+/* .answer_container:hover .commentTrash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
     background-color: transparent;
-}
+} */
 
-.comment_box:hover .trash {
+/* .comment_box:hover .trash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     align-items: flex-end;
     background-color: transparent;
-}
+} */
 
 @keyframes fadein {
     from {
@@ -842,8 +842,8 @@ textarea {
     align-self: flex-end;
     justify-self: flex-end;
     border: none;
-    display: none;
-    transition: 2s;
+    /* display: none; */
+    /* transition: 2s; */
     cursor: pointer;
     position: relative;
     z-index: 100;
@@ -870,11 +870,11 @@ textarea {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.comment_container:hover .commentTrash {
+/* .comment_container:hover .commentTrash {
     display: flex;
     -webkit-animation: fadein 0.5s;
     background-color: transparent;
-}
+} */
 
 .comment_title {
     font-size: 18px;

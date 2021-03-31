@@ -6,7 +6,7 @@ mixin question({ User: { username }, title, userId, message, id,  expertiseId, c
           h3.question_title= title
           if uId === userId
             form
-              button.trash(id=id) 🗑️
+              button.trash.questionTrash(id=id) 🗑️
         hr.solid
         h2.question_message= message
           div.question_footer

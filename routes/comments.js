@@ -29,4 +29,14 @@ router.get(
   })
 );
 
+router.post(
+  `/:id/edit`,
+  asyncHandler(async (req, res) => {
+    const comment = await Comment.findByPk(req.params.id);
+    const { commentMessage } = req.body;
+    comment.message = commentMessage;
+    await comment.save();
+  })
+);
+
 module.exports = router;

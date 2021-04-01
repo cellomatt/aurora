@@ -53,14 +53,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
             btn.innerHTML = 'cancel';
             commentHeader.classList.add('hidden-header');
             editCommentForm.classList.remove('hidden-edit-form');
-            let commentMessage = document.getElementById(`edit-comment-textarea-${id}`).value;
             let submitBtn = document.getElementById(`edit-comment-submit-${id}`);
             submitBtn.addEventListener('click', async (event) => {
                 event.preventDefault();
+                let commentMessage = document.getElementById(`edit-comment-textarea-${id}`).value;
                 console.log('submit edit for comment:', id);
+                console.log('edit: ', commentMessage);
                 await fetch(`/comments/${id}/edit`, {
-                    method: "POST",
-                    body: commentMessage,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    method: "POSt",
+                    body: commentMessage
                 })
             })
         }

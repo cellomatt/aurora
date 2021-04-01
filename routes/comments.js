@@ -32,10 +32,15 @@ router.get(
 router.post(
   `/:id/edit`,
   asyncHandler(async (req, res) => {
+    console.log('>>>>>>>>>>>>>>>', req.body)
     const comment = await Comment.findByPk(req.params.id);
-    const { commentMessage } = req.body;
+    const obj = JSON.parse(JSON.stringify(req.body)); // req.body = [Object: null prototype] { title: 'product' }
+    let commentMessage = Object.values(obj)[1];
+    console.log(commentMessage);
     comment.message = commentMessage;
     await comment.save();
+    res = await res.json();
+    return res.status;
   })
 );
 

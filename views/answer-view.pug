@@ -15,7 +15,7 @@ block content
             input(name="userId" type="hidden" value=userId)
             label(for="commentMessage")
             textarea.form__input_field(name="commentMessage" placeholder="Respond with comment here." required)
-            button(class='form__submit_button' id='edit-comment-submit') Submit
+            button(class='form__submit_button') Submit
       div
         each comment in comments
           div(id=`comment-trash-container-${comment.id}`)
@@ -26,7 +26,7 @@ block content
                   input(name="_csrf" type="hidden" value=csrfToken)
                   label(for="editTextArea")
                   textarea(name=`editTextarea` id=`edit-comment-textarea-${comment.id}` placeholder=`${comment.message}`)= comment.message  
-                  button.form__submit_button(type="submit") Submit Edit
+                  button.form__submit_button(type="submit" id=`edit-comment-submit-${comment.id}`) Submit Edit
                 if comment.userId === userId
                   button(id=comment.id class="commentTrash trash") 🗑️
                   button(id=comment.id class="commentEdit edit") edit

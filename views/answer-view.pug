@@ -22,7 +22,7 @@ block content
             div.comment_container
               div.title_container
                 h3(class="comment_title" id=`comment-${comment.id}-title`)= comment.message
-                form(action=`/comments/${comment.id}/edit` method='put' class='hidden-edit-form edit_comment' id=`edit-comment-${comment.id}-form`)
+                form(action=`/comments/${comment.id}/edit` method='post' class='hidden-edit-form edit_comment' id=`edit-comment-${comment.id}-form`)
                   input(name="_csrf" type="hidden" value=csrfToken)
                   input(name="answerId" type="hidden" value=answer.id)
                   label(for="editTextArea")

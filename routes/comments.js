@@ -35,12 +35,13 @@ router.post(
     console.log('>>>>>>', req.body, req.params.id)
     const comment = await Comment.findByPk(req.params.id);
     const obj = JSON.parse(JSON.stringify(req.body)); // req.body = [Object: null prototype] { title: 'product' }
-    let commentMessage = Object.values(obj)[1];
+    let commentMessage = Object.values(obj)[2];
+    let answerId = Object.values(obj)[1];
     console.log('>>>>>>>>>>>>', commentMessage);
     comment.message = commentMessage;
     await comment.save();
     res = await res.json();
-    return res.status;
+    return res.redirect(`/answers/${answerId}`)
   })
 );
 

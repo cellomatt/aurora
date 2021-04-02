@@ -210,3 +210,8 @@ textarea {
     max-width: 100px;
 }
 
+.commentEdit {
+    border: none;
+    font-size: 1.1em;
+}
+

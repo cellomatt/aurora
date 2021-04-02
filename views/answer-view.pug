@@ -30,7 +30,8 @@ block content
                   button.form__submit_button(id=`edit-comment-submit-${comment.id}`) Submit Edit
                 if comment.userId === userId
                   button(id=comment.id class="commentTrash trash") 🗑️
-                  button(id=comment.id class="commentEdit edit") edit
+                  button(id=comment.id class="commentEdit edit") 
+                    i(class="far fa-edit")
               div.answer_footer
                 div
                 h2.answer_username= comment.User.username

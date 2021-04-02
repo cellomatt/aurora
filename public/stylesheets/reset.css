@@ -72,6 +72,7 @@ h1 {
     align-content: space-between;
     position: relative;
     min-height: 100vh;
+    margin-bottom: 100px;
 }
 
 .main__left_col {
@@ -432,6 +433,7 @@ textarea {
     flex-wrap: wrap;
     height: 100%;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .topic_container__link {

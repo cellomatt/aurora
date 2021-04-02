@@ -196,3 +196,22 @@ textarea {
     font-style: italic;
     color: rgb(80, 80, 80);
 }
+
+.hidden-edit-form {
+    display: none;
+}
+
+.hidden-header {
+    display: none;
+}
+
+.edit-textarea {
+    height: 20px;
+    max-width: 100px;
+}
+
+.commentEdit {
+    border: none;
+    font-size: 1.1em;
+}
+

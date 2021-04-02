@@ -132,6 +132,7 @@ router.get(
 router.get(`/:id/delete`, asyncHandler(async (req, res) => {
   const question = await Question.findByPk(req.params.id)
   await question.destroy();
+  return res.status(200).send('deleted');
 }));
 
 module.exports = router;

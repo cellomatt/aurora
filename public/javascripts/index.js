@@ -39,15 +39,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const commentEdit = document.querySelectorAll('.commentEdit');
     commentEdit.forEach((edit) => {
         edit.addEventListener('click', async (event) => {
-            // when click, replace comment header with field input 
+            // when click, replace comment header with field input
             let id = event.target.id;
-            console.log(edit.innerHTML)
-            let editing = edit.classList.includes("fa-times") //figure out a better way to do this than innerHTML
+            let commentHeader = document.getElementById(`comment-${id}-title`);
+            let editing = commentHeader.classList.contains("hidden-header") //figure out a better way to do this than innerHTML
+            console.log(edit.classList)
             toggleCommentEdit(id, editing, edit);
             // make fetch with edit content
             })
         })
-    
+
 
     function toggleCommentEdit(id, editing, btn) {
         let commentHeader = document.getElementById(`comment-${id}-title`);
@@ -64,7 +65,6 @@ window.addEventListener("DOMContentLoaded", () => {
             editCommentForm.classList.remove('hidden-edit-form');
             let submitBtn = document.getElementById(`edit-comment-submit-${id}`);
             submitBtn.addEventListener('click', async (event) => {
-                // event.preventDefault();
                 let commentMessage = document.getElementById(`edit-comment-textarea-${id}`).value;
                 console.log('submit edit for comment:', id);
                 console.log('edit: ', commentMessage);

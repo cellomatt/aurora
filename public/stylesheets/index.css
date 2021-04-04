@@ -220,8 +220,15 @@ textarea {
     font-size: 1.1em;
     outline: none;
     cursor: pointer;
+    align-self: flex-end;
+    padding-bottom: .15em;
 }
 
 .comment_buttons {
     align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.1em;
 }

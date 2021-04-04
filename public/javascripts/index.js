@@ -42,8 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // when click, replace comment header with field input
             let id = event.target.id;
             let commentHeader = document.getElementById(`comment-${id}-title`);
-            let editing = commentHeader.classList.contains("hidden-header") //figure out a better way to do this than innerHTML
-            console.log(edit.classList)
+            let editing = commentHeader.classList.contains("hidden-header")
             toggleCommentEdit(id, editing, edit);
             // make fetch with edit content
             })
@@ -54,8 +53,6 @@ window.addEventListener("DOMContentLoaded", () => {
         let commentHeader = document.getElementById(`comment-${id}-title`);
         let editCommentForm = document.getElementById(`edit-comment-${id}-form`);
         if (editing) {
-            console.log("clicked")
-            console.log(id)
             btn.innerHTML = `<i id='${id}' class="far fa-edit"></i>`;
             commentHeader.classList.remove('hidden-header');
             editCommentForm.classList.add('hidden-edit-form');
@@ -66,15 +63,6 @@ window.addEventListener("DOMContentLoaded", () => {
             let submitBtn = document.getElementById(`edit-comment-submit-${id}`);
             submitBtn.addEventListener('click', async (event) => {
                 let commentMessage = document.getElementById(`edit-comment-textarea-${id}`).value;
-                console.log('submit edit for comment:', id);
-                console.log('edit: ', commentMessage);
-                // await fetch(`/comments/${id}/edit`, {
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //     },
-                //     method: "POST",
-                //     body: commentMessage
-                // })
             })
         }
     }

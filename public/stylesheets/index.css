@@ -3,6 +3,10 @@ h1 {
     font-weight: bold;
 }
 
+.edit_comment {
+    width: 100%;
+}
+
 .form__input_field {
     width: 100%;
     padding: 12px;
@@ -73,6 +77,7 @@ h1 {
 textarea {
     resize: vertical;
     height: 150px;
+    width: 100%;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -213,5 +218,10 @@ textarea {
 .commentEdit {
     border: none;
     font-size: 1.1em;
+    outline: none;
+    cursor: pointer;
 }
 
+.comment_buttons {
+    align-self: flex-start;
+}

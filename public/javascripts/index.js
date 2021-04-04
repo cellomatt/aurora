@@ -41,7 +41,8 @@ window.addEventListener("DOMContentLoaded", () => {
         edit.addEventListener('click', async (event) => {
             // when click, replace comment header with field input 
             let id = event.target.id;
-            let editing = edit.innerHTML == 'cancel';
+            console.log(edit.innerHTML)
+            let editing = edit.classList.includes("fa-times") //figure out a better way to do this than innerHTML
             toggleCommentEdit(id, editing, edit);
             // make fetch with edit content
             })
@@ -52,11 +53,13 @@ window.addEventListener("DOMContentLoaded", () => {
         let commentHeader = document.getElementById(`comment-${id}-title`);
         let editCommentForm = document.getElementById(`edit-comment-${id}-form`);
         if (editing) {
+            console.log("clicked")
+            console.log(id)
             btn.innerHTML = `<i id='${id}' class="far fa-edit"></i>`;
             commentHeader.classList.remove('hidden-header');
             editCommentForm.classList.add('hidden-edit-form');
         } else {
-            btn.innerHTML = 'cancel';
+            btn.innerHTML = `<i id='${id}' class="fas fa-times"></i>`;
             commentHeader.classList.add('hidden-header');
             editCommentForm.classList.remove('hidden-edit-form');
             let submitBtn = document.getElementById(`edit-comment-submit-${id}`);

@@ -40,7 +40,7 @@ router.post(
     console.log('>>>>>>>>>>>>', commentMessage);
     // comment.message = commentMessage;
     await comment.update({message: commentMessage});
-    res = await res.json();
+    // res = await res.json();
     return res.redirect(`/answers/${answerId}`)
   })
 );

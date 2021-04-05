@@ -38,9 +38,9 @@ router.post(
     let commentMessage = Object.values(obj)[2];
     let answerId = Object.values(obj)[1];
     console.log('>>>>>>>>>>>>', commentMessage);
-    comment.message = commentMessage;
-    await comment.save();
-    res = await res.json();
+    // comment.message = commentMessage;
+    await comment.update({message: commentMessage});
+    // res = await res.json();
     return res.redirect(`/answers/${answerId}`)
   })
 );

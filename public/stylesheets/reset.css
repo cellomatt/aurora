@@ -860,7 +860,10 @@ textarea {
     position: relative;
     z-index: 98;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -886,8 +889,9 @@ textarea {
 .comment_title {
     font-size: 18px;
     display: flex;
+    flex-direction: row;
     align-items: stretch;
-    width: 95%;
+    width: 80%;
     padding-top: 10px;
 }
 

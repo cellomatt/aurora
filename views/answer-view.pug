@@ -26,12 +26,12 @@ block content
                   input(name="_csrf" type="hidden" value=csrfToken)
                   input(name="answerId" type="hidden" value=answer.id)
                   label(for="editTextArea")
-                  textarea(name=`editTextarea` id=`edit-comment-textarea-${comment.id}` placeholder=`${comment.message}`)= comment.message  
+                  textarea(name=`editTextarea` id=`edit-comment-textarea-${comment.id}` placeholder=`${comment.message}`)= comment.message
                   button.form__submit_button(id=`edit-comment-submit-${comment.id}`) Submit Edit
                 if comment.userId === userId
                   div.comment_buttons
                     button(id=comment.id class="commentTrash trash") 🗑️
-                    button(id=comment.id class="commentEdit edit") 
+                    button(id=comment.id class="commentEdit edit")
                       i(id=comment.id class="far fa-edit")
               div.answer_footer
                 div
